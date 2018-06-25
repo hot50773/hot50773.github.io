@@ -906,6 +906,23 @@
         #new-article {
             position: relative;
         }
+        
+        footer ul li{
+          font-size: 0.8em;
+        }
+        
+        footer ul.about {
+          text-align: center;
+    }
+
+        footer ul.social {
+          text-align: center;
+    }
+
+    footer ul.social li {
+        padding: 0 0.5em;
+    }
+
 
     }
     /* ======================================= */
