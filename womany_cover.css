@@ -102,6 +102,16 @@
         /*line-height: 1.3em;*/
     }
 
+    .signup-btn{
+        background-color: #f08c00;
+        color: #fff;
+    }
+
+    .partner-btn{
+        background-color: #fff;
+        color: #f08c00;
+    }
+
     ul {
         list-style-type: none;
         margin: 0;
@@ -375,7 +385,8 @@
 
     #menu {
         height: 420px;
-        background: url(https://castle.womany.net/images/interests/21/womany_wo_1511762306-10863-0587.jpg) center;
+        position: relative;
+        background: url(imgs/womany_wo_1511762306-10863-0587.jpg) center;
         background-size: cover;
         text-align: center;
     }
@@ -418,6 +429,7 @@
 
     .menu-article {
         display: block;
+        width:33.33%;
         position: relative;
         height: 230px;
         padding: 5px 10px;
@@ -425,6 +437,7 @@
     }
 
     .menu-article img {
+
         -webkit-filter: brightness(90%);
         /* Safari 6.0 - 9.0 */
         filter: brightness(90%);
@@ -458,14 +471,46 @@
         right: 5px;
     }
 
-    .menu a i {
-        width: 7%;
-        height: 280px;
+
+    .more-article{
+        width:100%;
+        margin:auto;
+        padding:30px;
+        text-align: center;
+    }
+    .more-article a{
         display: inline-block;
+        width: 10em;
+        height: 1.8em;
+        background: transparent;
+        border: #fff 1px solid;
+        border-radius: 4px;
+        color:#fff;
+        font-family: Microsoft JhengHei;
+    }
+
+
+    #menu .carousel-control-prev i, #menu .carousel-control-next i{
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        width: 6%;
+        height: 250px;
         line-height: 250px;
         color: #aaa;
+        background: #a0a;
         font-size: 24px;
         vertical-align: middle;
+    }
+
+    #menu .carousel-control-prev{
+        position: absolute;
+        left: -3%
+    }
+
+    #menu .carousel-control-next{
+        position: absolute;
+        right: -3%;
     }
 
     #menu i:hover {
@@ -755,11 +800,54 @@
         left: 0;
         top: 60px;
         bottom: 0;
-        padding: 10px;
+        padding: 20px 5px;
         line-height: 2em;
         color: #666;
         font-family: Microsoft JhengHei;
-        font-size: 18px;
+        font-size: 17px;
+    }
+
+
+
+    #sidebar button{
+        display: block;
+        width: 160px;
+        height: 28px;
+        margin: 5px 0;
+        font-size: 14px;
+        text-align: center;
+        line-height: 28px;
+        border-radius: 4px;
+        border: 1px solid #f08c00;
+    }
+
+
+
+
+    #sidebar a{
+        display: block;
+        margin: 0 -10px;
+        padding: 0 10px;
+        color:#666;
+        }
+
+    #sidebar a:hover{
+        color:#808080;
+        background: #ddd;
+        text-decoration: none;
+    }
+
+    #sidebar i{
+        margin-right: 0.5em;
+    }
+
+    .divider{
+        margin:-10px -10px 0;
+        padding: 10px 10px 0;
+        background: #e7e7e7;
+        color: #888;
+        font-size: 0.9em;
+        font-weight: bold;
     }
     /* ======================================= */
     /* Media Query */
@@ -819,9 +907,6 @@
             position: relative;
         }
 
-        .menu-article{
-        width: 100%;
-        }
     }
     /* ======================================= */
 
@@ -850,9 +935,14 @@
             float: left;
         }
 
-        .menu-article{
-        width: 50%;
+    .menu-article {
+            padding: 5px;
         }
+
+        .menu-article .title {
+        padding: 10px 5px;
+        font-size: 16px;
+    }
     }
     /* ======================================= */
 
@@ -930,9 +1020,6 @@
             left: 0;
         }
 
-        .menu-article{
-        width: 33%;
-        }
     }
     /* ======================================= */
 
