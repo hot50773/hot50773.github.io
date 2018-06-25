@@ -1,1 +1,476 @@
+<!DOCTYPE html>
+<html>
+<!--https://jsfiddle.net/DiCoding/nueza4ku/-->
+<!-- https://www.w3schools.com/code/tryit.asp?filename=FQSIKITNV9XM -->
 
+<head>
+  <title>女人迷 Womany(practice)</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="bootstrap.min.css"> -->
+  <!-- bootstrap.js -->
+  <!-- <script src="bootstrap.min.js"></script> -->
+  <!-- jquery.js CDN -->
+  <!-- <script src="jquery.min.js"></script> -->
+  <!-- popper.js CDN -->
+  <!-- <script src="popper.min.js"></script> -->
+  <!-- womany logo in html title -->
+  <link rel="icon" type="image.png" href="imgs/womany_logo_300x300-c21a7842f4c9fa5746ea4424e42221db.png">
+  <!-- Font Awesome -->
+  <link href="fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome.css" rel="stylesheet">
+  <link href="fontawesome-free-5.0.13/web-fonts-with-css/css/fa-brands.css" rel="stylesheet">
+  <link href="fontawesome-free-5.0.13/web-fonts-with-css/css/fa-solid.css" rel="stylesheet">
+  <!-- ================================== -->
+  <!-- bootstrap.css CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <!-- jquery.js CDN -->
+  <script id="import-jquery" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- popper.js CDN -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script> -->
+  <!-- bootstrap.js CDN -->
+  <script id="import-bs-js" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <!-- Local fallback -->
+  <!-- google font -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Tulpen+One|Noto+Serif" rel="stylesheet"> -->
+  <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/regular.js" integrity="sha384-BazKgf1FxrIbS1eyw7mhcLSSSD1IOsynTzzleWArWaBKoA8jItTB5QR+40+4tJT1" crossorigin="anonymous"></script> -->
+  <!-- FontAwesome for icons and font -->
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/solid.css" integrity="sha384-29Ax2Ao1SMo9Pz5CxU1KMYy+aRLHmOu6hJKgWiViCYpz3f9egAJNwjnKGgr+BXDN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/fontawesome.css" integrity="sha384-Lyz+8VfV0lv38W729WFAmn77iH5OSroyONnUva4+gYaQTic3iI2fnUKtDSpbVf0J" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/brands.css" integrity="sha384-KtmfosZaF4BaDBojD9RXBSrq5pNEO79xGiggBxf8tsX+w2dBRpVW5o0BPto2Rb2F" crossorigin="anonymous">
+     -->
+  <!-- my css -->
+  <link rel="stylesheet" type="text/css" href="womany_cover.css">
+</head>
+
+<body>
+  <header>
+    <div class="open-sidebar float-L">
+      <a href="javascript:void(0);" onclick="openSideBar()"><i class="fas fa-bars"></i></a></div>
+    <a class="logo" href="#"></a>
+    <span class="today">今天是&nbsp;&nbsp;
+      <span class="date">3/14</span><span class="arrow"> &rarr; </span> 瞧瞧今日人氣話題吧：</span>
+    <div id="search-box" class="float-R">
+      <form>
+        <input type="text" name="search" value="&nbsp;大家最愛搜 塑身運動" size="17">
+      </form>
+      <i class="fas fa-search" style="color: #888;"></i>
+    </div>
+    <!-- 简 -->
+    <svg width="50" height="50" class="float-R">
+      <circle cx="30" cy="30" r="18" fill="#444"></circle>
+      <text x="21.5" y="36" fill="#ddd">简</text>
+    </svg>
+    <!-- rss -->
+    <svg width="50" height="50" class="float-R">
+      <circle cx="30" cy="30" r="18" fill="#444"></circle>
+      <path d="M6.503 20.752c0 1.794-1.456 3.248-3.251 3.248-1.796 0-3.252-1.454-3.252-3.248 0-1.794 1.456-3.248 3.252-3.248 1.795.001 3.251 1.454 3.251 3.248zm-6.503-12.572v4.811c6.05.062 10.96 4.966 11.022 11.009h4.817c-.062-8.71-7.118-15.758-15.839-15.82zm0-3.368c10.58.046 19.152 8.594 19.183 19.188h4.817c-.03-13.231-10.755-23.954-24-24v4.812z" transform="translate(23,22) scale(0.6)"></path>
+    </svg>
+  </header>
+  <script>
+  function openSideBar() {
+    var x = document.getElementById("sidebar");
+    var y = document.getElementById("container");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+      y.style.padding = "60px 0";
+    } else {
+      x.style.display = "block";
+      y.style.padding = "60px 0 0 220px";
+    }
+  }
+  </script>
+  <div id="sidebar">
+    <ul>
+      <li>首頁</li>
+      <li>讀讀東西</li>
+      <li>名家專欄</li>
+      <li>特別企劃</li>
+      <li>活動講座</li>
+      <li>迷人體驗</li>
+      <li>熱烈討論</li>
+      <li>買好東西</li>
+      <li>成為會員</li>
+    </ul>
+    <ul>
+      <li>女人迷日報</li>
+      <li>#codeforgender</li>
+      <li>525我愛我讀時節</li>
+      <li>全球性別影響大獎</li>
+      <li>去臉紅紅說性談愛</li>
+    </ul>
+  </div>
+  <div class="clearfix"></div>
+  <div id="container">
+    <div id="content-container">
+      <!-- section 1 -->
+      <div id="my-carousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#my-carousel" data-slide-to="0" class="active"></li>
+          <li data-target="#my-carousel" data-slide-to="1"></li>
+          <li data-target="#my-carousel" data-slide-to="2"></li>
+          <li data-target="#my-carousel" data-slide-to="3"></li>
+          <li data-target="#my-carousel" data-slide-to="4"></li>
+          <li data-target="#my-carousel" data-slide-to="5"></li>
+          <li data-target="#my-carousel" data-slide-to="6"></li>
+        </ul>
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <a href="#"><img src="imgs/womany_660x360_1_1524470838-29386-8476.jpg"></a>
+          </div>
+          <div class="carousel-item">
+            <a href="#"><img src="imgs/womany_660x360_2_1524470810-29392-4452.jpg"></a>
+          </div>
+          <div class="carousel-item">
+            <a href="#"><img src="imgs/womany_660x360_buyandship_1524470823-29388-6703.jpg"></a>
+          </div>
+          <div class="carousel-item">
+            <a href="#"><img src="imgs/womany_660x360_1524470865-29392-3615.jpg"></a>
+          </div>
+          <div class="carousel-item">
+            <a href="#"><img src="imgs/womany_660x360__dan_shen_ri_ji_1524470852-29388-7340.jpg"></a>
+          </div>
+          <div class="carousel-item">
+            <a href="#"><img src="imgs/womany_660x360_1_1524470838-29386-8476.jpg"></a>
+          </div>
+        </div>
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#my-carousel" data-slide="prev">
+    <i class="fas fa-chevron-left"></i>
+  </a>
+        <a class="carousel-control-next" href="#my-carousel" data-slide="next">
+    <i class="fas fa-chevron-right"></i>
+  </a>
+      </div>
+      <div id="editor-select">
+        <div class="gray-mask">
+          <span class="black-tag">
+            &nbsp;#編輯精選
+          </span>
+          <div class="title-white">性侵發生16年後，她與性侵她的人共寫一本書，專訪《寬宥之南》作者 Thordis Elva</div>
+        </div>
+      </div>
+      <div id="new-article">
+        <span class="black-tag">
+          &nbsp;#最新文章
+        </span>
+        <div class="title-white">為什麼韓國廢墟咖啡廳《Onion》這麼紅？</div>
+      </div>
+      <div class="clearfix"></div>
+      <!-- for  float:left in "@media screen and (min-width: 640px)" -->
+      <!-- section 2 -->
+      <div id="menu">
+        <div class="black-mask">
+         <!--  <div id="menu-bar">
+            <button id="default" onclick="openArticleList('#power', this)">女力</button>
+            <button onclick="openArticleList('#sense', this)">品味</button>
+            <button onclick="openArticleList('#vision', this)">視野</button>
+            <button onclick="openArticleList('#beauty', this)">美力</button>
+            <button onclick="openArticleList('#feminism', this)">女權</button>
+            <button onclick="openArticleList('#gender', this)">性別</button>
+            <button onclick="openArticleList('#parenthood', this)">親職</button>
+            <button onclick="openArticleList('#relationship', this)">關係</button>
+            <button onclick="openArticleList('#health', this)">康健</button>
+        </div> -->
+        <div id="load-RWD-list"></div>   
+      </div>
+    </div>
+      <script>
+//jQuery solution
+var w = window.innerWidth
+|| document.documentElement.clientWidth
+|| document.body.clientWidth;
+$('#load-RWD-list').html(w);
+
+$(window).on('resize', function(){
+    var cur_width = window.innerWidth
+|| document.documentElement.clientWidth
+|| document.body.clientWidth;
+if(cur_width <= 640){
+  $('#load-RWD-list').html("640!!!!!!");
+}
+else if(cur_width <=960){
+  $('#load-RWD-list').html("999666000!!!!!!");
+}
+else{
+  $('#load-RWD-list').html("TOOBIGGGGGG!!");
+}
+    
+});
+
+//open diff tags of #menu
+      function openArticleList(listID, thisLink) {
+        var parentID, i, tabcontent, tablinks;
+        // get and hide all article-lists
+        $("#menu .carousel").hide();
+        // get all links and remove the class "active-link"
+        $("#menu-bar button").removeClass("active-link");
+        // display the choosen article-list
+        // add class "active-link" to this element(link)
+        $(listID).show();
+        $(thisLink).addClass("active-link");
+      }
+      
+      
+      </script>
+      <!-- section 3 -->
+      <div class="clearfix"></div>
+      <div id="ads" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#ads" data-slide-to="0" class="active"></li>
+          <li data-target="#ads" data-slide-to="1"></li>
+          <li data-target="#ads" data-slide-to="2"></li>
+          <li data-target="#ads" data-slide-to="3"></li>
+          <li data-target="#ads" data-slide-to="4"></li>
+          <li data-target="#ads" data-slide-to="5"></li>
+          <li data-target="#ads" data-slide-to="6"></li>
+        </ul>
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <a href="#">
+    <span class="image" style="background-image: url('imgs/womany_1200x630_1_1_1524191385-29388-9919.jpg');"></span>
+    <span>
+      <h2>迷人體驗：【購物金 NT$1,000】BuyandShip 國際網購轉運服務</h2>
+      <span class="note">沒有不想買的好貨，只有買不到的可惜。台灣買不到的、價差太大的，不用苦苦尋找信用好的代購博感情，BuyandShip 就是你一個人的專屬代購，便利快捷的國際網購轉運服務，為你買到全世界。（別忘了先註冊 BuyandShip 會員哦）</span>
+        <span class="sponsor">品牌贊助</span>
+    </span>
+  </a>
+          </div>
+          <div class="carousel-item">
+            <a href="#">
+    <span class="image" style="background-image: url('imgs/womany_1200x630_1525488532-28031-4086.jpg');"></span>
+    <span>
+      <h2>放下應該 | 邀請妳，開始練習放逐束縛，解放壓力</h2>
+      <span class="note">從此刻起，請試著並懂得，釋放身心長期累積的壓力，放下許多「應該」的束縛，偶爾，為自己安排，好好享受做自己的時光！</span>
+        <span class="sponsor">品牌贊助</span>
+    </span>
+  </a>
+          </div>
+          <div class="carousel-item">
+            <a href="#">
+    <span class="image" style="background-image: url('imgs/womany_KV_1200x630_1526264939-25277-8200.png');"></span>
+      <span><h2>【舒膚相談室】讓生活更 Free 的溫柔力量！生理期也能做自己的主角</h2>
+      <span class="note">妳如何與摩擦共處呢？生活中難免會遇到摩擦，別讓摩擦帶走最初的自己，多愛自己一點，讓摩擦少一點，舒服多一點，妳值得擁有更幸福的人生！</span>
+        <span class="sponsor">品牌贊助</span></span>
+  </a>
+          </div>
+          <div class="carousel-item">
+            <a href="#"><span class="image" style="background-image: url('imgs/womany_1200x630_1_1518148331-8281-8581.png');"></span>
+                <span><h2>迷人體驗：阿原新品——玫瑰皂</h2>
+      <span class="note">阿原新上市的「玫瑰皂」，內有玫瑰、月桃、艾草、桑葉萃取、紅藜、薑精油，精萃成一顆鬆綁生活的肥皂。將玫瑰皂輕輕搓揉，像把生活的緊繃溫揉搓開，那溫順的泡沫在身體化開，滿溢自然不刺激的花香、亦帶著森林的清新氣味，就像回歸自然的真樸一樣美好。（特別備註：若本身有口服、外服肌膚藥物等等建議諮詢專科醫師後再行使用）</span>
+        <span class="sponsor">品牌贊助</span></span></a>
+          </div>
+          <div class="carousel-item">
+            <a><span class="image" style="background-image: url('imgs/womany_1200x630_0228_1520233759-18867-6040.png');">
+          
+        </span>
+        <span><h2>
+        迷人體驗：綠藤生機-輕乳液 15
+        </h2>
+        <span class="note">女人迷邀請你使用油水保養，回歸肌膚最純粹的樣貌。
+- 調和最適合亞洲混合肌的油水比例 15:85
+- 創新採用被譽為「超級果實」的天然禮物—接骨木莓果油
+- 一瓶成就完整保濕的三重機制
+
+【貼心提醒】
+- 完成體驗後需回填心得並附上照片（150 字以上）
+- 回填時，歡迎也將心得同步分享至個人社群（FB/IG/BLOG）</span>
+<span class="sponsor">品牌贊助</span>
+</span></a>
+          </div>
+        </div>
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#ads" data-slide="prev">
+    <i class="fas fa-chevron-left"></i>
+  </a>
+        <a class="carousel-control-next" href="#ads" data-slide="next">
+    <i class="fas fa-chevron-right"></i>
+  </a>
+      </div>
+      <div id="hot-article" background="#ddd">
+        <div id="yellow-bar">熱門文章</div>
+        <ul>
+          <li>
+            <a href="https://womany.net/read/article/15644?ref=h-hot-0" title="專訪鄧惠文：「如果你一直等著被照顧，你自己的成長不會完成」" target="_blank">
+      專訪鄧惠文：「如果你一直等著被照顧，你自己的成長不會完成」
+      <br>
+        <svg>
+        <line x2="100%">
+        </line>
+        </svg>
+    </a>
+          </li>
+          <li>
+            <a href="https://womany.net/read/article/15643?ref=h-hot-1" title="專訪鄧惠文：「請不要再對愛情懷抱嬰兒式的幻想」" target="_blank">
+      專訪鄧惠文：「請不要再對愛情懷抱嬰兒式的幻想」
+    <br>
+    <svg>
+        <line x2="62%">
+        </line>
+        </svg>
+    </a>
+          </li>
+          <li>
+            <a href="https://womany.net/redirects/1472?ref=h-hot-2" title="【編輯開箱】致 ME TIME 的情書：褪下堅強，謝謝你讓我柔軟" target="_blank" class="sponsored">
+      【編輯開箱】致 ME TIME 的情書：褪下堅強，謝謝你讓我柔軟
+      <!-- <span class="sponsor">推薦</span> -->
+    <br>
+    <svg>
+        <line x2="56%"></line>
+        </svg>
+    </a>
+          </li>
+          <li>
+            <a href="https://womany.net/read/article/11694?ref=h-hot-3" title="【單身日記】人生這麼長，誰沒愛過幾個渣？" target="_blank">【單身日記】人生這麼長，誰沒愛過幾個渣？
+      <br>
+      <svg>
+        <line x2="49%"></line>
+        </svg>
+    </a>
+          </li>
+          <li>
+            <a href="https://womany.net/read/article/15760?ref=h-hot-4" title="八歲印度女童遭四名警察姦殺，誰把強暴當成政治武器？" target="_blank">
+      <span class="ttl">八歲印度女童遭四名警察姦殺，誰把強暴當成政治武器？</span>
+      <br>
+      <svg>
+        <line x2="43%"></line>
+        </svg>
+    </a>
+          </li>
+          <li>
+            <a href="https://womany.net/read/article/15675?ref=h-hot-5" title="專訪唐綺陽：受傷，是人生的禮物！不斷創「星」的人生修復術" target="_blank">
+      專訪唐綺陽：受傷，是人生的禮物！不斷創「星」的人生修復術
+      <br>
+      <svg>
+        <line x2="37%"></line>
+        </svg>
+    </a>
+          </li>
+          <li>
+            <a href="https://womany.net/read/article/8491?ref=h-hot-6" title="四分鐘爆汗 Tabata！在家也能雕塑迷人腹肌與蜜桃臀" target="_blank">
+      四分鐘爆汗 Tabata！在家也能雕塑迷人腹肌與蜜桃臀      
+      <br>
+      <svg>
+        <line x2="27%"></line>
+        </svg>
+    </a>
+          </li>
+          <li>
+            <a href="https://womany.net/redirects/1471?ref=h-hot-7" title="泰國插畫家筆下的曖昧風景：我不需要完美，我只需要我們" target="_blank" class="sponsored" data-nad="1471">
+      <span class="ttl">泰國插畫家筆下的曖昧風景：我不需要完美，我只需要我們</span>
+      <span class="sponsor">推薦</span>
+      <br>
+      <svg>
+        <line x2="20%"></line>
+        </svg>
+    </a>
+          </li>
+          <li>
+            <a href="https://womany.net/read/article/11239?ref=h-hot-8" title="【職場女聲】30 歲再不改變，你就要錯過自己的人生" target="_blank">
+      <span class="ttl">【職場女聲】30 歲再不改變，你就要錯過自己的人生</span>
+      <br>
+      <svg>
+        <line x2="16%"></line>
+        </svg>
+    </a>
+          </li>
+        </ul>
+      </div>
+      <div class="clearfix"></div>
+      <div id="hot-authors">
+        <span class="grey-title">
+            大家都在看
+      </span>
+        <div id="author-box">
+          <a>
+            <figure>
+              <img src="imgs/aac48c05b77068d1610942098d3c54f5.jpg" alt="海苔熊">
+              <figcaption>海苔熊</figcaption>
+            </figure>
+          </a>
+        </div>
+      </div>
+      <!-- section 4 -->
+      <div class="clearfix"></div>
+      <div id="video">
+        <div id="yellow-bar">女人迷影音</div>
+        <div id="video-box" class="float-L">
+          <!-- ??????? -->
+          <iframe src="https://www.youtube.com/embed/?rel=0&showinfo=0&listType=user_uploads&list=welovewomany&enablejsapi=1&origin=https%3A%2F%2Fwomany.net&widgetid=1" allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+      <div id="ad-tall">
+      </div>
+      <div class="clearfix"></div>
+      <div id="daily-quote">
+        <span class="grey-title">每天好話帶著走</span>
+        <span class="words">停止在意別人的臉色而裝好人，試著以真正的自己迎接往後的人生。<br>
+    - Lyzz 山崎《不受傷的練習》</span>
+      </div>
+    </div>
+    <footer>
+      <div class="gold-mask" style="padding:0.8em">
+        <p>嘿，親愛的，女人迷最愛你 <i class="fas fa-heart" style="color:#fa0;"></i>
+          <br> We support and empower you!
+          <br>
+          <ul class="about">
+            <li><a>關於我們</a></li>
+            <li><a>加入我們</a></li>
+            <li><a>廣告合作</a></li>
+            <li><a>成為作者</a></li>
+            <li><a>APP下載</a></li>
+          </ul>
+          <ul class="social">
+            <li><a><i class="fab fa-facebook-f"></i></a></li>
+            <li><a><i class="fab fa-instagram"></i></a></li>
+            <li><a><i class="fab fa-line"></i></a></li>
+          </ul>
+          <ul class="copyright">
+            <li><a href="#">貼心隱私權與服務條款</a></li>
+            <li>法律顧問：灜睿兩岸暨創新顧問有限公司</li>
+            <li><a href="#">客服信箱：sweetservice@womany.net</a></li>
+          </ul>
+        </p>
+      </div>
+    </footer>
+  </div>
+  <script>
+  function loadScript(url, callback) {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    if (typeof(callback) != "undefined") {
+      if (script.readyState) {
+        script.onreadystatechange = function() {
+          if (script.readyState == "loaded" || script.readyState == "complete") {
+            script.onreadystatechange = null;
+            callback();
+          }
+        };
+      } else {
+        script.onload = function() {
+          callback();
+        };
+      }
+    };
+    script.src = url;
+    document.head.appendChild(script);
+  }
+
+  // checkScript("https://cdn.bootcss.com/jquery/3.2.1/jquery.js", window.jQuery);
+
+  if (!window.jQuery) {
+    loadScript("jquery.min.js", function() {
+
+      //加载,并执行回调函数
+      console.log("動態載入jquery成功");
+    });
+
+  };
+  </script>
+</body>
+
+</html>
