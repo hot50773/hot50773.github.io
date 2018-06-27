@@ -727,8 +727,7 @@
 
     footer {
         width: 100%;
-        height: 202px;
-        max-height: auto;
+        height: auto;
         /*position:absolute; */
         /* global layout setting */
         /*bottom: 0;*/
