@@ -756,7 +756,7 @@
     }
 
     footer ul:not(.copyright) {
-        padding: 0 2em;
+        padding: 0.5em 1.5em;
     }
 
     footer ul.about {
