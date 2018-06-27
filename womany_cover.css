@@ -728,6 +728,7 @@
     footer {
         width: 100%;
         height: 202px;
+        max-height: auto;
         /*position:absolute; */
         /* global layout setting */
         /*bottom: 0;*/
@@ -751,12 +752,12 @@
 
     footer ul li {
         display: inline-block;
-        padding: 0 0.3em;
+        padding: 0 0.2em;
         font-size: 1.2em;
     }
 
     footer ul:not(.copyright) {
-        padding: 0.5em 1.5em;
+        padding: 0.5em 1em;
     }
 
     footer ul.about {
@@ -773,7 +774,7 @@
 
     footer ul.copyright {
         border-top: #fff solid 1px;
-        padding: 0.5em 0.5em 0;
+        padding: 0.5em 0.2em 0;
     }
 
     footer ul.copyright li {
@@ -905,10 +906,6 @@
         #editor-select,
         #new-article {
             position: relative;
-        }
-        
-        footer{
-        height: auto;
         }
         
         footer ul.about {
