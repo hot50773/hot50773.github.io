@@ -17,9 +17,10 @@
   <!-- womany logo in html title -->
   <link rel="icon" type="image.png" href="imgs/womany_logo_300x300-c21a7842f4c9fa5746ea4424e42221db.png">
   <!-- Font Awesome -->
-  <link href="fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="my_fontawesome/css/fontawesome-all.min.css">
+<!--   <link href="fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome.css" rel="stylesheet">
   <link href="fontawesome-free-5.0.13/web-fonts-with-css/css/fa-brands.css" rel="stylesheet">
-  <link href="fontawesome-free-5.0.13/web-fonts-with-css/css/fa-solid.css" rel="stylesheet">
+  <link href="fontawesome-free-5.0.13/web-fonts-with-css/css/fa-solid.css" rel="stylesheet"> -->
   <!-- ================================== -->
   <!-- bootstrap.css CDN -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
@@ -83,7 +84,7 @@
     <button class="signup-btn">註冊/登入會員</button>
     <button class="partner-btn">加入有伴計畫</button>
     <ul>
-      <li><a href="#"><i class="fa fa-fw fa-home"></i>首頁</a></li>
+      <li><a class="home-tag" href="#"><i class="fa fa-fw fa-home"></i>首頁</a></li>
       <li><a href="#"><i class="fa fa-fw fa-book"></i>讀讀東西</li>
       <li><a href="#"><i class="fa fa-fw fa-bookmark"></i>名家專欄</a></li>
       <li><a href="#"><i class="fa fa-fw fa-gem"></i>特別企劃</a></li>
@@ -165,7 +166,19 @@
       <!-- for  float:left in "@media screen and (min-width: 640px)" -->
       <!-- section 2 -->
       <div id="menu">
+        <div id="menu-mobile-version">
+            <a style="background-image:url('imgs/womany_mi_nv_li_640x600_1530091516-1902-6419.jpg')"><div class="black-mask">女力</div></a>
+            <a style="background-image:url('imgs/womany_xing_qu_mobile_05_1517286318-9938-5743.png')"><div class="black-mask">品味</div></a>
+            <a style="background-image:url('imgs/womany_vision_1_1480575489-22787-8124.jpg')"><div class="black-mask">視野</div></a>
+            <a style="background-image:url('imgs/womany_redlip_1480576015-22790-5792.jpg')"><div class="black-mask">美力</div></a>
+            <a style="background-image:url('imgs/womany_mi_nv_quan_640x600_1530091995-1902-7990.jpg')"><div class="black-mask">女權</div></a>
+            <a style="background-image:url('imgs/womany_mi_xing_bie_640x600_1530091563-1902-1816.jpg')"><div class="black-mask">性別</div></a>
+            <a style="background-image:url('imgs/womany_children_1480576782-22790-6049.jpg')"><div class="black-mask">親職</div></a>
+            <a style="background-image:url('imgs/womany_womany_guan_xi_2_1502446033_2249_6620_1511530701-10860-0526.jpg')"><div class="gray-mask">關係</div></a>
+            <a style="background-image:url('imgs/womany_health_1480576214-22787-4066.jpg')"><div class="black-mask">康健</div></a>
+          </div>
         <div class="black-mask">
+
           <div id="menu-bar">
             <button id="default" onclick="openArticleList('#power', this)">女力</button>
             <button onclick="openArticleList('#sense', this)">品味</button>
@@ -981,7 +994,7 @@
             <li><a><i class="fab fa-instagram"></i></a></li>
             <li><a><i class="fab fa-line"></i></a></li>
           </ul>
-        <br>
+          <br>
           <ul class="copyright">
             <li><a href="#">貼心隱私權與服務條款</a></li>
             <li>法律顧問：灜睿兩岸暨創新顧問有限公司</li>
