@@ -897,7 +897,7 @@
       width: 100%;
     }
     #my-carousel {
-      min-height: 240px;
+      min-height: 260px;
     }
     #my-carousel img {
       width: 100%;
@@ -906,6 +906,11 @@
       min-height: 240px;
       overflow: hidden;
     }
+    
+    #my-carousel i {
+      min-height: 240px;
+    }
+    
     #ads {
       max-height: 420px;
       min-height: 240px;
@@ -933,7 +938,7 @@
       width: 100%;
       height: 100%;
     }
-    #menu:not(#menu-mobile-version) {
+    #menu > :not(#menu-mobile-version) {
       display: none;
     }
     footer ul:not(.copyright) {
