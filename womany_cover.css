@@ -232,6 +232,10 @@
     -webkit-transition: all 0.66s ease;
   }
 
+  #search-box i{
+    color: #888;
+  }
+
   svg {
     display: inline-block;
     margin: auto 0;
@@ -300,7 +304,7 @@
 
   #my-carousel img {
     width: 620px;
-    height: 340px;
+    max-height: 340px;
   }
 
   #my-carousel .carousel-indicators li {
@@ -329,10 +333,7 @@
 
   #my-carousel i {
     display: none;
-    width: 70px;
-    height: 340px;
-    line-height: 340px;
-    font-size: 40px;
+    max-height: 340px;
   }
 
   #my-carousel:hover i {
@@ -517,7 +518,6 @@
     height: 250px;
     line-height: 250px;
     color: #aaa;
-    background: #a0a;
     font-size: 24px;
     vertical-align: middle;
   }
@@ -872,10 +872,56 @@
 
   /* Media Query */
 
+@media screen and (max-width: 400px){
+    #my-carousel .carousel-control-prev, 
+    #my-carousel .carousel-control-next,
+    #my-carousel i
+    {
+      width: 45px !important;
+      font-size: 25px !important;
+    }
+}
+
+
+@media screen and (min-width: 400px){
+
+    #my-carousel .carousel-control-prev, 
+    #my-carousel .carousel-control-next,
+    #my-carousel i
+    {
+      width: 55px !important;
+      font-size: 30px !important;
+    }
+}
+
   @media screen and (max-width: 640px) {
-    header div.open-sidebar {
+    .rss{
+        display: none;
+    }
+
+    .open-sidebar {
       display: block;
     }
+
+    #search-box {
+        margin: 1em 1em 1em 0.5em;
+        padding: 0 0.2em 0.2em;
+        transition: width 0.66s ease;
+        -webkit-transition: width 0.66s ease;
+      }
+
+    #search-box:hover{
+        border: none;
+    }
+
+    #search-box i:hover{
+        color: #aaa;
+    }
+
+    #search-box form{
+        display: none;
+    }
+
     #sidebar {
       display: none;
     }
@@ -896,21 +942,19 @@
     #menu>div {
       width: 100%;
     }
+
+
     #my-carousel {
-      min-height: 260px;
+      min-height: 200px;
     }
     #my-carousel img {
       width: 100%;
       height: auto;
-      min-width: 440px;
-      min-height: 240px;
+      min-width: 300px;
+      min-height: 180px;
       overflow: hidden;
     }
-    
-    #my-carousel i {
-      min-height: 240px;
-    }
-    
+
     #ads {
       max-height: 420px;
       min-height: 240px;
@@ -965,7 +1009,7 @@
   /* ======================================= */
 
   @media screen and (min-width: 640px) {
-    header div.open-sidebar {
+    header .open-sidebar {
       display: block;
     }
     #container {
@@ -978,6 +1022,15 @@
       width: 640px;
       height: auto;
     }
+    
+    #my-carousel .carousel-control-prev, 
+    #my-carousel .carousel-control-next,
+    #my-carousel i
+    {
+      width: 70px !important;
+      font-size: 40px !important;
+    }
+
     #editor-select,
     #new-article {
       position: relative;
@@ -991,6 +1044,11 @@
     #menu-mobile-version {
       display: none;
     }
+
+    #menu > :not(#menu-mobile-version) {
+      display: visible;
+    }
+
     .menu-article {
       padding: 5px;
     }
