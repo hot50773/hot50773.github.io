@@ -46,7 +46,7 @@
 <body>
   <header>
     <div class="open-sidebar float-L">
-      <a href="javascript:void(0);" onclick="openSideBar()"><i class="fas fa-bars"></i></a></div>
+      <i class="fas fa-bars"></i></div>
     <a class="logo" href="#"></a>
     <span class="today">今天是&nbsp;&nbsp;
       <span class="date">3/14</span><span class="arrow"> &rarr; </span> 瞧瞧今日人氣話題吧：</span>
@@ -68,17 +68,17 @@
     </svg>
   </header>
   <script>
-  function openSideBar() {
-    var x = document.getElementById("sidebar");
-    var y = document.getElementById("container");
-    if (x.style.display === "block") {
-      x.style.display = "none";
-      y.style.padding = "60px 0";
-    } else {
-      x.style.display = "block";
-      y.style.padding = "60px 0 0 220px";
+  
+  $(".open-sidebar").click(function() {
+    if ($("#sidebar").css('display') === 'none') {
+      $("#sidebar").width(0);
+      $('#sidebar').show();
+      $("#sidebar").animate({width:'220px'}, 666, 'linear');    
+    } else{
+      $("#sidebar").animate({width:'0'}, 666, 'linear', function(){$('#sidebar').hide();});
+      
     }
-  }
+  });
   </script>
   <div id="sidebar">
     <button class="signup-btn">註冊/登入會員</button>

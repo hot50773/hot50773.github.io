@@ -152,12 +152,12 @@
     padding: 20px;
   }
 
-  .open-sidebar a i {
+  .open-sidebar i {
     font-size: 20px;
     color: #999;
   }
 
-  .open-sidebar a:hover i {
+  .open-sidebar i {
     color: #fff;
   }
 
@@ -824,6 +824,9 @@
     color: #666;
     font-family: Microsoft JhengHei;
     font-size: 17px;
+    transition: all 0.66s ease;
+    -webkit-transition: all 0.66s ease;
+    z-index: 100;
   }
 
   #sidebar button {
@@ -1068,16 +1071,17 @@
       width: 185px;
       padding: 12px 35px 12px 0;
     }
-    #content-container {
-      width: 960px;
-      height: 2060px;
-    }
     #sidebar {
       display: none;
     }
     #container {
       padding: 60px 0 0;
     }
+    #content-container {
+      width: 960px;
+      height: 2060px;
+    }
+    
     #my-carousel,
     #editor-select,
     #new-article,
