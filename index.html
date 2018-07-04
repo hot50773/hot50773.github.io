@@ -26,8 +26,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
   <!-- jquery.js CDN -->
   <script id="import-jquery" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <!-- popper.js CDN -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script> -->
   <!-- bootstrap.js CDN -->
   <script id="import-bs-js" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
   <!-- Local fallback -->
@@ -73,9 +71,9 @@
     if ($("#sidebar").css('display') === 'none') {
       $("#sidebar").width(0);
       $('#sidebar').show();
-      $("#sidebar").animate({width:'220px'}, 666, 'linear');    
+      $("#sidebar").animate({width:'220px'}, 'linear');    
     } else{
-      $("#sidebar").animate({width:'0'}, 666, 'linear', function(){$('#sidebar').hide();});
+      $("#sidebar").animate({width:'0'}, 'linear', function(){$('#sidebar').hide();});
       
     }
   });
@@ -153,9 +151,6 @@
       
       $(document).ready(function(){
         var w = $(window).innerWidth();
-        console.log("outer");
-        console.log(typeof w);
-        console.log((w >= 640));
           if (w >= 640){
             $("#my-carousel i").height("340px");
             console.log($("#my-carousel i").height());
@@ -166,16 +161,11 @@
             $("#my-carousel i").height(carousel_h + "px");
             $("#my-carousel i").css("line-height", carousel_h + "px");
           }
-        console.log("outer end");
         $(window).resize(function(){
           var w = $(window).innerWidth();
-        console.log(typeof w);
-        console.log((w >= 640));
           if (w >= 640){
             $("#my-carousel i").height("340px");
-            console.log($("#my-carousel i").height());
             $("#my-carousel i").css("line-height", "340px");
-            console.log($("#my-carousel i").css("line-height"));
           }else{
             var carousel_h = $("#my-carousel").height();
             $("#my-carousel i").height(carousel_h + "px");
