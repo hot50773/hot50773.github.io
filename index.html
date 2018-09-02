@@ -1057,9 +1057,16 @@
 
   if (!window.jQuery) {
     loadScript("jquery.min.js", function() {
-
       //加载,并执行回调函数
       console.log("動態載入jquery成功");
+    });
+    loadScript("bootstrap.min.js", function() {
+      //加载,并执行回调函数
+      console.log("動態載入bootstrap js成功");
+    });
+    loadScript("bootstrap.min.css", function() {
+      //加载,并执行回调函数
+      console.log("動態載入bootstrap css成功");
     });
 
   };
