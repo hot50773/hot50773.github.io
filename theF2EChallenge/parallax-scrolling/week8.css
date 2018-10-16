@@ -59,86 +59,29 @@ h2 {
   .opening .triangle {
     -webkit-animation-name: rotateTriangle;
     animation-name: rotateTriangle; }
-@-webkit-keyframes rotateTriangle {
-  0% {
-    -webkit-transform: rotate(0deg) scale(1, 1);
-    transform: rotate(0deg) scale(1, 1); }
-  80% {
-    -webkit-transform: rotate(360deg) scale(1, 1);
-    transform: rotate(360deg) scale(1, 1); }
-  93% {
-    -webkit-transform: rotate(360deg) scale(1, 1);
-    transform: rotate(360deg) scale(1, 1); }
-  99% {
-    -webkit-transform: rotate(360deg) scale(20, 20);
-    transform: rotate(360deg) scale(20, 20); } }
 @keyframes rotateTriangle {
   0% {
-    -webkit-transform: rotate(0deg) scale(1, 1);
     transform: rotate(0deg) scale(1, 1); }
   80% {
-    -webkit-transform: rotate(360deg) scale(1, 1);
     transform: rotate(360deg) scale(1, 1); }
   93% {
-    -webkit-transform: rotate(360deg) scale(1, 1);
     transform: rotate(360deg) scale(1, 1); }
   99% {
-    -webkit-transform: rotate(360deg) scale(20, 20);
     transform: rotate(360deg) scale(20, 20); } }
-@-webkit-keyframes AnimateCircle {
-  0% {
-    -webkit-transform: scale(1, 1);
-    transform: scale(1, 1); }
-  20% {
-    -webkit-transform: scale(1.05, 1.05);
-    transform: scale(1.05, 1.05); }
-  40% {
-    -webkit-transform: scale(1.2, 1.2);
-    transform: scale(1.2, 1.2); }
-  80% {
-    -webkit-transform: scale(1.3, 1.3);
-    transform: scale(1.3, 1.3); }
-  87% {
-    -webkit-transform: scale(1.3, 1.3);
-    transform: scale(1.3, 1.3); }
-  93% {
-    -webkit-transform: scale(10, 10);
-    transform: scale(10, 10); } }
 @keyframes AnimateCircle {
   0% {
-    -webkit-transform: scale(1, 1);
     transform: scale(1, 1); }
   20% {
-    -webkit-transform: scale(1.05, 1.05);
     transform: scale(1.05, 1.05); }
   40% {
-    -webkit-transform: scale(1.2, 1.2);
     transform: scale(1.2, 1.2); }
   80% {
-    -webkit-transform: scale(1.3, 1.3);
     transform: scale(1.3, 1.3); }
   87% {
-    -webkit-transform: scale(1.3, 1.3);
     transform: scale(1.3, 1.3); }
   93% {
     -webkit-transform: scale(10, 10);
     transform: scale(10, 10); } }
-@-webkit-keyframes resize {
-  20% {
-    -webkit-transform: rotate(-90deg) scale(1, 1);
-    transform: rotate(-90deg) scale(1, 1); }
-  40% {
-    -webkit-transform: rotate(-180deg) scale(1.1, 1.1);
-    transform: rotate(-180deg) scale(1.1, 1.1); }
-  60% {
-    -webkit-transform: rotate(-270deg) scale(1.2, 1.2);
-    transform: rotate(-270deg) scale(1.2, 1.2); }
-  80% {
-    -webkit-transform: rotate(-360deg) scale(1.2, 1.2);
-    transform: rotate(-360deg) scale(1.2, 1.2); }
-  87% {
-    -webkit-transform: rotate(-360deg) scale(15, 15);
-    transform: rotate(-360deg) scale(15, 15); } }
 @keyframes resize {
   20% {
     -webkit-transform: rotate(-90deg) scale(1, 1);

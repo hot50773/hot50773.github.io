@@ -1,0 +1,314 @@
+my-light-blue = #1469ff
+my-deep-blue = #0027c8
+my-pink = #ff3c82
+
+
+html, body {
+  margin 0
+  font-family 'Roboto'
+  color #FFF
+}
+
+body {
+  // overflow hidden
+}
+
+.hide {
+  display none !important
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.opening {
+  width 100vw
+  height 100vh
+  background  my-light-blue
+}
+
+center()
+  position absolute
+  top 50%
+  left 50%
+  transform translate(-50%, -50%)
+
+star-top()
+  width 235px
+  border-top 135px solid my-pink
+  border-left 80px solid transparent
+  border-right 80px solid transparent
+  position relative
+
+star-before()
+  top -194px
+  content ''
+  position absolute
+  left calc(50% - 50px)
+  border-left 50px solid transparent
+  border-right 50px solid transparent
+  border-bottom 60px solid my-pink
+
+.star {
+  z-index 10
+  center()
+  &__top {
+    star-top()
+    &:before{
+      star-before()
+    }
+  }
+
+  &__bottom {
+    star-top()
+    transform rotate(180deg)
+    &:before{
+      star-before()
+    }
+  }
+}
+
+.circle {
+  center()
+  width 500px
+  height 500px
+  border-radius 50%
+  background-color my-deep-blue
+  z-index 9
+}
+
+.square {
+  center()
+  width 400px
+  height 400px
+  z-index 8
+  background-color black
+}
+
+.text-block {
+  center()
+  z-index 20
+  text-align center
+
+  &__title {
+    font-weight 700
+    font-size 64px
+  }
+
+  &__desc {
+    font-size 24px
+    margin-top 20px
+  }
+}
+
+/* ===================================================== */
+/* Question Screens */
+/* ================ */
+
+// Geometric elements Mixin
+
+animate-section__elements(wid_hei_in, color_in)
+  width wid_hei_in
+  height wid_hei_in
+  background-color color_in
+  position absolute
+
+/* q-section Golbal Settings */
+
+.q-section {
+  background-color my-light-blue
+  height 100%
+  width 60%
+  opacity 0
+
+  &__wrapper {
+    width 380px
+    padding 40px 30px
+  }
+
+  &__number {
+    font-size 64px
+    font-weight 700
+    margin-bottom 20px
+    color my-pink
+  }
+
+  &__title {
+    font-size 36px
+    font-weight 700
+    line-height 48px
+    margin-bottom 30px
+  }
+
+  &__desc {
+    margin-bottom 30px
+    font-size 24px
+    color my-deep-blue
+    line-height 36px
+  }
+
+  &__options {
+    list-style none
+    padding 0
+
+    li {
+      margin 0
+      padding 10px 30px
+      border 2px solid
+      border-radius 30px
+      margin-bottom 10px
+      font-size 20px
+      text-align center
+      cursor pointer
+      transition all 0.4s
+
+      &:hover{
+        background white
+        color my-light-blue
+      }
+    }
+  }
+}
+
+/* animate-section Golbal Settings */
+
+.animate-section {
+  position absolute
+  top 0
+  bottom 0
+
+  &__triangle {
+    width 0
+    height 0
+    border-style solid
+    position absolute
+  }
+
+  &__circle {
+    border-radius 50%
+    position absolute
+  }
+
+  &__square {
+  position absolute
+  }
+}
+
+// Q1
+
+.screenQ1 {
+  width 100vw
+  height 100vh
+  background-color my-pink
+  position relative
+  transition background 0.5s
+
+  .q-section {
+    background-color my-light-blue
+  }
+
+  .animate-section {
+    right 0
+    left 100%
+    background-color my-deep-blue
+
+    &__square {
+      animate-section__elements(200px, my-pink)
+      top 100vh
+      left 50px
+    }
+
+    &__triangle {
+      border-width 0px 70px 120px 70px
+      border-color transparent transparent white transparent
+      top calc(100vh + 100px)
+      right -20px
+    }
+
+    &__circle {
+      animate-section__elements(400px, black)
+      bottom -900px
+      right -50px
+    }
+  }
+}
+
+// Q2
+
+.screenQ2 {
+  // full screen size
+  width 100vw
+  height 100vh
+  background my-deep-blue
+  position relative
+
+  .q-section {
+    position absolute
+    right 0
+    background my-deep-blue
+  }
+
+  .animate-section {
+    left 0
+    right 60%
+    background my-pink
+
+    &__square {
+      animate-section__elements(300px, my-light-blue)
+      transform rotate(40deg)
+      bottom -300px
+      top unset
+      left -170px
+    }
+
+    &__triangle {
+      border-width 0px 150px 250px 150px
+      top 120vh
+      left 100px
+      border-color transparent transparent white transparent
+      transform rotate(25deg)
+    }
+
+    &__circle {
+      animate-section__elements(200px, black)
+      left 70px
+      bottom -300px
+    }
+  }
+}
+
+
+/* =============== */
+/* parallex scroll */
+/* =============== */
+.calculating {
+  height 5700px
+  width 100vw
+  background my-pink
+  .text-block {
+    position fixed
+    z-index 20
+    color black
+  }
+
+  .small-circle {
+    border-radius 50%
+  }
+}
+
+.trigger1, .trigger2, .trigger3, .trigger4 {
+  position relative
+}
+
+.trigger1 {
+  top 100vh
+}
+.trigger2 {
+  top 200vh
+}
+.trigger3 {
+  top 300vh
+}
+.trigger4 {
+  top 400vh
+}

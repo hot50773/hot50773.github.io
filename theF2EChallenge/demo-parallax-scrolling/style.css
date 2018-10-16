@@ -1,0 +1,276 @@
+html,
+body {
+  margin: 0;
+  font-family: 'Roboto';
+  color: #fff;
+}
+.hide {
+  display: none !important;
+}
+.invisible {
+  opacity: 0;
+}
+.opening {
+  width: 100vw;
+  height: 100vh;
+  background: #1469ff;
+}
+.star {
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.star__top {
+  width: 235px;
+  border-top: 135px solid #ff3c82;
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  position: relative;
+}
+.star__top:before {
+  top: -194px;
+  content: '';
+  position: absolute;
+  left: calc(50% - 50px);
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 60px solid #ff3c82;
+}
+.star__bottom {
+  width: 235px;
+  border-top: 135px solid #ff3c82;
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  position: relative;
+  transform: rotate(180deg);
+}
+.star__bottom:before {
+  top: -194px;
+  content: '';
+  position: absolute;
+  left: calc(50% - 50px);
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 60px solid #ff3c82;
+}
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background-color: #0027c8;
+  z-index: 9;
+}
+.square {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  z-index: 8;
+  background-color: #000;
+}
+.text-block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  text-align: center;
+}
+.text-block__title {
+  font-weight: 700;
+  font-size: 64px;
+}
+.text-block__desc {
+  font-size: 24px;
+  margin-top: 20px;
+}
+/* ===================================================== */
+/* Question Screens */
+/* ================ */
+/* q-section Golbal Settings */
+.q-section {
+  background-color: #1469ff;
+  height: 100%;
+  width: 60%;
+  opacity: 0;
+}
+.q-section__wrapper {
+  width: 380px;
+  padding: 40px 30px;
+}
+.q-section__number {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ff3c82;
+}
+.q-section__title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 48px;
+  margin-bottom: 30px;
+}
+.q-section__desc {
+  margin-bottom: 30px;
+  font-size: 24px;
+  color: #0027c8;
+  line-height: 36px;
+}
+.q-section__options {
+  list-style: none;
+  padding: 0;
+}
+.q-section__options li {
+  margin: 0;
+  padding: 10px 30px;
+  border: 2px solid;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+.q-section__options li:hover {
+  background: #fff;
+  color: #1469ff;
+}
+/* animate-section Golbal Settings */
+.animate-section {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+.animate-section__triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
+}
+.animate-section__circle {
+  border-radius: 50%;
+  position: absolute;
+}
+.animate-section__square {
+  position: absolute;
+}
+.screenQ1 {
+  width: 100vw;
+  height: 100vh;
+  background-color: #ff3c82;
+  position: relative;
+  transition: background 0.5s;
+}
+.screenQ1 .q-section {
+  background-color: #1469ff;
+}
+.screenQ1 .animate-section {
+  right: 0;
+  left: 100%;
+  background-color: #0027c8;
+}
+.screenQ1 .animate-section__square {
+  width: 200px;
+  height: 200px;
+  background-color: #ff3c82;
+  position: absolute;
+  top: 100vh;
+  left: 50px;
+}
+.screenQ1 .animate-section__triangle {
+  border-width: 0px 70px 120px 70px;
+  border-color: transparent transparent #fff transparent;
+  top: calc(100vh + 100px);
+  right: -20px;
+}
+.screenQ1 .animate-section__circle {
+  width: 400px;
+  height: 400px;
+  background-color: #000;
+  position: absolute;
+  bottom: -900px;
+  right: -50px;
+}
+.screenQ2 {
+  width: 100vw;
+  height: 100vh;
+  background: #0027c8;
+  position: relative;
+}
+.screenQ2 .q-section {
+  position: absolute;
+  right: 0;
+  background: #0027c8;
+}
+.screenQ2 .animate-section {
+  left: 0;
+  right: 60%;
+  background: #ff3c82;
+}
+.screenQ2 .animate-section__square {
+  width: 300px;
+  height: 300px;
+  background-color: #1469ff;
+  position: absolute;
+  transform: rotate(40deg);
+  bottom: -300px;
+  top: unset;
+  left: -170px;
+}
+.screenQ2 .animate-section__triangle {
+  border-width: 0px 150px 250px 150px;
+  top: 120vh;
+  left: 100px;
+  border-color: transparent transparent #fff transparent;
+  transform: rotate(25deg);
+}
+.screenQ2 .animate-section__circle {
+  width: 200px;
+  height: 200px;
+  background-color: #000;
+  position: absolute;
+  left: 70px;
+  bottom: -300px;
+}
+/* =============== */
+/* parallex scroll */
+/* =============== */
+.calculating {
+  height: 5700px;
+  width: 100vw;
+  background: #ff3c82;
+}
+.calculating .text-block {
+  position: fixed;
+  z-index: 20;
+  color: #000;
+}
+.calculating .small-circle {
+  border-radius: 50%;
+}
+.trigger1,
+.trigger2,
+.trigger3,
+.trigger4 {
+  position: relative;
+}
+.trigger1 {
+  top: 100vh;
+}
+.trigger2 {
+  top: 200vh;
+}
+.trigger3 {
+  top: 300vh;
+}
+.trigger4 {
+  top: 400vh;
+}

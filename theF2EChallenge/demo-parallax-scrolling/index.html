@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Week8</title>
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <!-- TweenLite -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenLite.min.js"></script>
+    <!-- TweenLite Plugins -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/plugins/CSSPlugin.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/easing/EasePack.min.js"></script>
+    <!-- Scroll Magic -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+<!-- 【第八週 - parallax scrolling】
+觀看設計稿 >> http://bit.ly/2uX1m47
+影片模擬動線 >> https://www.youtube.com/watch?v=xViDpVyIBoU
+
+動線簡述：
+1.一開始直接進場到第一個題目
+2.點選第一題題目完，自動轉場到第二個題目，以此類推
+3.33秒後必須一直觸發滑鼠滾輪，滾到直到看到答案。除了滑鼠滾輪，當使用者在執行下方動作時也可觸發。
+a.鍵盤向下鍵
+b.手指觸碰螢幕偵測向下(touchstart、touchmove、touchend)
+ -->
+    <div class="opening">
+      <div class="star">
+          <div class="star__top"></div>
+          <div class="star__bottom"></div>
+      </div>
+      <div class="square"></div>
+      <div class="circle"></div>
+      <div class="text-block">
+        <div class="text-block__title">GEOMETRY PERSON</div>
+        <div class="text-block__desc">find your core personality in shapes!</div>
+      </div>
+    </div>
+    <div class="screenQ1">
+      <div class="text-block">
+          <div class="text-block__title">GEOMETRY PERSON</div>
+          <div class="text-block__desc">find your core personality in shapes!</div>
+      </div>
+      <div class="q-section">
+        <div class="q-section__wrapper">
+          <div class="q-section__number">
+            Q1
+          </div>
+          <div class="q-section__title">
+              Choose the answer appeared in your mind instantly
+          </div>
+          <div class="q-section__desc">
+              Choose the answer appeared in your mind instantly
+          </div>
+          <ul class="q-section__options">
+            <li data-value="1">Destroy all humans in the world</li>
+            <li data-value="2">Make the war never happened</li>
+            <li data-value="3">You won’t get old and live forever</li>
+          </ul>
+        </div>
+      </div>
+      <div class="animate-section">
+        <div class="animate-section__square"></div>
+        <div class="animate-section__triangle"></div>
+        <div class="animate-section__circle"></div>
+      </div>
+    </div>
+    <div class="screenQ2">
+      <div class="q-section">
+        <div class="q-section__wrapper">
+          <div class="q-section__number">
+            Q2
+          </div>
+          <div class="q-section__title">
+              Imagine you’re almost late, but totally lost at a foked road. Which way do you prefer to go?
+          </div>
+          <div class="q-section__desc">
+              Choose the answer appeared in your mind instantly
+          </div>
+          <ul class="q-section__options">
+            <li data-value="4">The left one</li>
+            <li data-value="5">The right one</li>
+            <li data-value="6">Open Google Map</li>
+          </ul>
+        </div>
+      </div>
+      <div class="animate-section">
+        <div class="animate-section__square"></div>
+        <div class="animate-section__triangle"></div>
+        <div class="animate-section__circle"></div>
+      </div>
+    </div>
+    <div class="calculating hide">
+      <div class="text-block">
+        <div class="text-block__title">You are ...</div>
+        <div class="text-block__desc">Keep scrolling to show the result</div>
+      </div>
+      <div class="trigger1"></div>
+      <div class="trigger2"></div>
+      <div class="trigger3"></div>
+      <div class="trigger4"></div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
