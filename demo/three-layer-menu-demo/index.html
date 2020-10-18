@@ -1,0 +1,225 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="index.css">
+  <title>Document</title>
+</head>
+
+<body cz-shortcut-listen="true">
+  <header>
+    <a href="/" class="logo"></a>
+    <div class="header-right">
+      <a class="header-btn" href="/Cart">
+        <span class="cart">cart</span>
+        <span class="cart-number">0</span>
+      </a>
+      <div class="header-btn search-wrap"><span class="search"></span></div>
+      <div class="header-btn hamburger-wrap"><span class="hamburger"></span></div>
+    </div>
+
+    <!-- Search Content -->
+    <!-- serch result will put here -->
+
+    <!-- Menu -->
+    <div class="menu-content-wrap" style="display: block;">
+      <!-- <div class="menu-content"> -->
+      <!-- <div class="content"> -->
+      <!-- <div class="result"> -->
+      <div class="close-wrap">
+        <span class="menu-close">X</span>
+      </div>
+      <!-- <div class="menu-wrap"> -->
+      <!-- <div class="menu"> -->
+      <!-- root -->
+      <div class="menu-root-wrap">
+        <!-- root: list -->
+        <div class="menulist">
+          <div class="menu-container">
+            <div class="menu-content">
+              <ul>
+                <!-- 第一層 List -->
+
+                <li class="menu-item js-slide" data-id="id_1">全站分類 &gt;</li>
+
+                <li class="menu-item js-slide" data-id="id_2">新品推薦 &gt;</li>
+
+                <li class="menu-item" data-id="id_3">
+                  <a href="link-to-page">category-5</a>
+                </li>
+                <!-- <li class="menu-item js-slide" data-id="id_2">新品推薦 ></li>
+                          <li class="menu-item js-slide" data-id="id_3"><a href="#">品牌館</a></li> -->
+              </ul>
+            </div>
+
+            <!-- 第一層 SubMenu -->
+            <div class="sub-menu">
+
+              <div class="menulist hide" id="id_1">
+                <span class="menu-back-btn">&lt; 返回主選單</span>
+                <div class="menu-container">
+                  <div class="menu-content">
+                    <span class="menu-title">全站分類</span>
+                    <!-- 第二層 List-->
+                    <ul>
+
+                      <li class="menu-item js-slide" data-id="id_1_1">中文新書 &gt; </li>
+
+
+                      <li class="menu-item js-slide" data-id="id_1_2">英文新書 &gt; </li>
+
+                    </ul>
+                    <!-- 第二層 List:END -->
+                  </div>
+
+                  <!-- 第二層 SubMenu -->
+                  <div class="sub-menu">
+                    <div class="menulist hide" id="id_1_1">
+                      <span class="menu-back-btn">&lt; 返回全站分類</span>
+
+                      <div class="menu-container">
+                        <div class="menu-content">
+                          <span class="menu-title">中文新書</span>
+                          <!-- 第三層 List -->
+                          <ul>
+
+                            <li class="menu-item" data-id="id_1_1_1">
+                              <a href="link-to-page-1-1-1">
+                                中文小說 </a>
+                            </li>
+
+
+                            <li class="menu-item" data-id="id_1_1_2">
+                              <a href="link-to-page-1-1-2">
+                                中文散文 </a>
+                            </li>
+
+                          </ul>
+                          <!-- 第三層 List:END -->
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="menulist hide" id="id_1_2">
+                      <span class="menu-back-btn">&lt; 返回全站分類</span>
+
+                      <div class="menu-container">
+                        <div class="menu-content">
+                          <span class="menu-title">英文新書</span>
+                          <!-- 第三層 List -->
+                          <ul>
+
+                            <li class="menu-item" data-id="id_1_2_1">
+                              <a href="link-to-page-1-2-1">
+                                英文小說 </a>
+                            </li>
+
+
+                            <li class="menu-item" data-id="id_1_2_2">
+                              <a href="link-to-page-1-2-2">
+                                英文歷史 </a>
+                            </li>
+
+                          </ul>
+                          <!-- 第三層 List:END -->
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <!-- 第二層 SubMenu:END -->
+                </div>
+              </div>
+
+              <div class="menulist hide" id="id_2">
+                <span class="menu-back-btn">&lt; 返回主選單</span>
+                <div class="menu-container">
+                  <div class="menu-content">
+                    <span class="menu-title">新品推薦</span>
+                    <!-- 第二層 List-->
+                    <ul>
+
+                      <li class="menu-item js-slide" data-id="id_2_1">中文新書 &gt; </li>
+
+                    </ul>
+                    <!-- 第二層 List:END -->
+                  </div>
+
+                  <!-- 第二層 SubMenu -->
+                  <div class="sub-menu">
+                    <div class="menulist hide" id="id_2_1">
+                      <span class="menu-back-btn">&lt; 返回新品推薦</span>
+
+                      <div class="menu-container">
+                        <div class="menu-content">
+                          <span class="menu-title">中文新書</span>
+                          <!-- 第三層 List -->
+                          <ul>
+
+                            <li class="menu-item" data-id="id_2_1_1">
+                              <a href="link-to-page-2-1-1">
+                                中文小說 </a>
+                            </li>
+
+
+                            <li class="menu-item" data-id="id_2_1_2">
+                              <a href="link-to-page-2-1-2">
+                                中文歷史 </a>
+                            </li>
+
+                          </ul>
+                          <!-- 第三層 List:END -->
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <!-- 第二層 SubMenu:END -->
+                </div>
+              </div>
+
+              <div class="menulist hide" id="id_3">
+                <span class="menu-back-btn">&lt; 返回主選單</span>
+                <div class="menu-container">
+                  <div class="menu-content">
+                    <span class="menu-title">category-5</span>
+                    <!-- 第二層 List-->
+                    <ul>
+                      <br>
+                      <b>Warning</b>: Invalid argument supplied for foreach() in
+                      <b>/Applications/XAMPP/xamppfiles/htdocs/three-layer-menu-demo/index.php</b> on line <b>78</b><br>
+                    </ul>
+                    <!-- 第二層 List:END -->
+                  </div>
+
+                  <!-- 第二層 SubMenu -->
+                  <div class="sub-menu">
+                    <br>
+                    <b>Warning</b>: Invalid argument supplied for foreach() in
+                    <b>/Applications/XAMPP/xamppfiles/htdocs/three-layer-menu-demo/index.php</b> on line <b>91</b><br>
+                  </div>
+                  <!-- 第二層 SubMenu:END -->
+                </div>
+              </div>
+            </div>
+            <!-- 第一層 SubMenu:END -->
+          </div>
+        </div>
+      </div>
+      <!-- </div> -->
+      <!-- </div> -->
+      <!-- </div>
+        </div> -->
+      <!-- </div> -->
+    </div>
+  </header>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="index.js"></script>
+
+</body>
+
+</html>
