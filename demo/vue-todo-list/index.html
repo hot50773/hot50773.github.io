@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    input:disabled::placeholder {
+      border-color: none;
+
+    }
+    input:disabled, input[readonly] {
+      border-width: 0;
+      background: transparent;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="(item, index) in list" :id="item.id" :key="item.id">
+        ${ index }.
+        <input
+          type="text"
+          placeholder="please enter text"
+          :value="'Item Todo' + item.id"
+          :readonly="!item.isEditing"
+          v-on:click="editItem(item.id)"
+          v-on:focusout="afterEditItem(item.id)"
+        />
+
+        <button v-on:click="deleteItem(item.id)">delete</button>
+      </li>
+    </ul>
+    <button v-on:click="addItem()">add</button>
+  </div>
+
+  <script src="https://unpkg.com/vue@2.2.6/dist/vue.js"></script>
+  <script>
+    Vue.component('my-component', {
+      render: function (createElement) {
+        return createElement(
+          'div',
+          {},
+          [ createElement('p', 'Hello World 2!'), ]
+        )
+      }
+    });
+
+    var vm = new Vue({
+      el: '#app',
+      delimiters: ['${', '}'],
+      data: {
+        list: [
+          { id: '1', name: '選項 1', isEditing: false },
+          { id: '2', name: '選項 2', isEditing: false },
+          { id: '3', name: '選項 3', isEditing: false },
+        ],
+      },
+      methods: {
+        findIndexById (id) {
+          return this.list.findIndex((item, idx) => {
+            return item.id === id
+          })
+        },
+        deleteItem (id) {
+          // find index
+          var index = this.findIndexById(id)
+
+          this.$delete(this.list, index)
+        },
+        addItem () {
+          var id = this.list.length + 1
+
+          this.list.push({
+            id: id,
+            name: '選項' + id,
+            isEditing: false
+          });
+        },
+        editItem (id) {
+          var index = this.findIndexById(id)
+
+          this.list[index].isEditing = true
+        },
+        afterEditItem (id) {
+          var index = this.findIndexById(id)
+          this.list[index].isEditing = false
+        }
+      }
+    });
+  </script>
+</body>
+</html>
