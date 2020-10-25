@@ -19,33 +19,40 @@
 <body>
   <div id="app">
     <ol>
-      <li v-for="(item, index) in list" :id="item.id" :key="item.id">
-        <input
-          type="text"
-          placeholder="please enter text"
-          :value="item.name"
-          :readonly="!item.isEditing"
-          v-on:click="editItem(item.id)"
-          v-on:focusout="afterEditItem(item.id)"
-        />
-
-        <button v-on:click="deleteItem(item.id)">delete</button>
-      </li>
+      <li is="list-component" v-for="(item, index) in list" :item="item" v-on:delete-item="deleteItem(id)"></li>
     </ol>
+
     <button v-on:click="addItem(list.length + 1)">add</button>
   </div>
 
   <script src="https://unpkg.com/vue@2.2.6/dist/vue.js"></script>
+  <script type="text/x-template" id="list_template">
+    <li :id="item.id" :key="item.id">
+      <input
+        type="text"
+        :value="item.name"
+        :readonly="!item.isEditing"
+        v-on:click="editItem(item.id)"
+        v-on:focusout="afterEditItem(item.id)"
+        placeholder="please enter text"
+      />
+
+      <button v-on:click="$emit('delete-item')">delete</button>
+    </li>
+  </script>
   <script>
-    Vue.component('my-component', {
-      render: function (createElement) {
-        return createElement(
-          'div',
-          {},
-          [ createElement('p', 'Hello World 2!'), ]
-        )
+    Vue.component('list-component', { //元件要在root前宣告
+    props: ['item'], //props要在template前宣告，裡面是由data傳入的值
+    template: '#list_template',
+      methods: {
+        editItem (id) {
+          this.item.isEditing = true
+        },
+        afterEditItem (id) {
+          this.item.isEditing = false
+        }
       }
-    });
+    })
 
     var vm = new Vue({
       el: '#app',
@@ -75,15 +82,6 @@
             name: '代辦 ' + (id),
             isEditing: false
           });
-        },
-        editItem (id) {
-          var index = this.findIndexById(id)
-
-          this.list[index].isEditing = true
-        },
-        afterEditItem (id) {
-          var index = this.findIndexById(id)
-          this.list[index].isEditing = false
         }
       }
     });
