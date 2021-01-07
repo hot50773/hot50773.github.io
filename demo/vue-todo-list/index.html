@@ -17,13 +17,18 @@
   </style>
 </head>
 <body>
+  <!-- <form action="get">
+
+    <input type="text" name="testval" value="123123">
+    <button>SUbmit</button>
+  </form> -->
   <div id="app">
     <ol>
       <li v-for="(item, index) in list" :id="item.id" :key="item.id">
         <input
           type="text"
           placeholder="please enter text"
-          :value="item.name"
+          v-model:name="item.name"
           :readonly="!item.isEditing"
           v-on:click="editItem(item.id)"
           v-on:focusout="afterEditItem(item.id)"
@@ -34,18 +39,18 @@
     </ol>
     <button v-on:click="addItem(list.length + 1)">add</button>
   </div>
+  <script type="text/javascript" src="https://unpkg.com/vue@2.2.6/dist/vue.js"></script>
 
-  <script src="https://unpkg.com/vue@2.2.6/dist/vue.js"></script>
   <script>
-    Vue.component('my-component', {
-      render: function (createElement) {
-        return createElement(
-          'div',
-          {},
-          [ createElement('p', 'Hello World 2!'), ]
-        )
-      }
-    });
+    // Vue.component('my-component', {
+    //   render: function (createElement) {
+    //     return createElement(
+    //       'div',
+    //       {},
+    //       [ createElement('p', 'Hello World 2!'), ]
+    //     )
+    //   }
+    // });
 
     var vm = new Vue({
       el: '#app',

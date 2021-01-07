@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<script src="https://rawgit.com/jonathantneal/svg4everybody/master/dist/svg4everybody.js"></script>
+		<script>svg4everybody();</script>
+		<title>SVG &lt;symbol&gt; sprite preview | svg-sprite</title>
+		<style>@charset "UTF-8";body{padding:0;margin:0;color:#666;background:#fafafa;font-family:Arial,Helvetica,sans-serif;font-size:1em;line-height:1.4}header{display:block;padding:3em 3em 2em 3em;background-color:#fff}header p{margin:2em 0 0 0}section{border-top:1px solid #eee;padding:2em 3em 0 3em}section ul{margin:0;padding:0}section li{display:inline;display:inline-block;background-color:#fff;position:relative;margin:0 2em 2em 0;vertical-align:top;border:1px solid #ccc;padding:1em 1em 3em 1em;cursor:default}.icon-box{margin:0;width:144px;height:144px;position:relative;background:#ccc url("data:image/gif;base64,R0lGODlhDAAMAIAAAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQjk4OTI0MUY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQjk4OTI0MkY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNCOTg5MjNGRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCOTg5MjQwRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAwADAAAAhaEH6mHmmzcgzJAUG/NVGrfOZ8YLlABADs=") top left repeat;border:1px solid #ccc;display:table-cell;vertical-align:middle;text-align:center}.icon{display:inline;display:inline-block}h1{margin-top:0}h2{margin:0;padding:0;font-size:1em;font-weight:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:absolute;left:1em;right:1em;bottom:1em}footer{display:block;margin:0;padding:0 3em 3em 3em}footer p{margin:0;font-size:.7em}footer a{color:#0f7595;margin-left:0}</style>
+		
+<!--
+	
+Sprite shape dimensions
+====================================================================================================
+You will need to set the sprite shape dimensions via CSS when you use them as inline SVG, otherwise
+they would become a huge 100% in size. You may use the following dimension classes for doing so.
+They might well be outsourced to an external stylesheet of course.
+
+-->
+
+<style type="text/css">
+	.svg-santa-dims { width: 432px; height: 432px; }
+</style>
+<!--
+====================================================================================================
+-->
+
+	</head>
+	<body>
+	
+<!--
+	
+Inline <symbol> SVG sprite
+====================================================================================================
+This is an inlined version of the generated SVG sprite. The single images may be <use>d everywhere
+below within this document. Please see
+
+	https://github.com/jkphl/svg-sprite/blob/master/docs/configuration.md#defs--symbol-mode
+
+for further details on how to create this embeddable sprite variant.
+
+-->
+
+<svg width="0" height="0" style="position:absolute">
+		<symbol id="santa" viewBox="0 0 432 432" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><style>.ast4{fill:#9e1d28}</style><path class="ast4" d="M160.567 115.683l-4.112-.039c-.975-.074-1.939-.03-2.897-.177-.524-.045-1.131-.224-1.559-.515-1.015-.732-1.102-1.667-.343-2.636.697-.869 1.646-1.335 2.766-1.229.714.052 1.455.147 2.167.198 1.193.124 1.512-.259 1.194-1.364a68.629 68.629 0 00-1.427-4.376c-.471-1.254-.471-1.254-1.843-1.267-3.237-.026-6.169.933-8.891 2.63-1.339.833-2.505 1.746-3.476 2.971-1.592 1.92-1.979 4.082-1.128 6.34 1.461 3.736 4.116 6.107 8.077 6.798 1.943.337 3.888.178 5.795-.143 1.159-.228 2.291-.499 3.489-.564.964-.043 2.028-.025 2.953.266 2.356.7 3.451 3.053 2.596 5.258-.554 1.398-1.669 2.093-2.951 2.521-1.958.538-3.908.887-5.964.868-.307.005-.641-.035-.947-.029-.702.066-1.004.377-.821 1.069.6 2.353 1.227 4.749 1.897 7.118.249.897.494.993 1.447.833 1.7-.254 3.445-.536 5.134-.907 2.381-.555 4.571-1.61 6.602-3.124 4.63-3.505 5.309-10.865 2.577-14.552-2.602-3.581-5.814-5.853-10.335-5.948zM204.733 120.387c-5.732-9.824-17.695-30.098-17.894-30.425-.355-.503-.766-.608-1.333-.291-.566.318-1.147.585-1.714.904-1.991 1.088-3.934 2.163-5.989 3.214-.996.544-1.452 1.268-1.424 2.568.208 4.356.582 25.288.675 31.419.069 1.452.148 1.54 1.581 1.204 2.043-.503 4.099-.956 6.141-1.458 1.181-.267 2.31-.521 3.476-.84.863-.235.974-.429.674-1.328-.042-.152-.134-.291-.176-.442-.872-1.996-2.997-7.191-3.257-7.938l6.086-1.661c.138.507 1.334 6.284 1.781 8.723.157.774.379.987 1.231.917.803-.056 1.591-.162 2.379-.268 2.67-.402 5.149-1.297 7.574-2.395.923-.415.932-.581.415-1.475-.041-.152-.133-.29-.226-.428zm-20.241-9.678c-.585-2.946-.697-5.749-.494-8.801 1.937 2.304 3.265 4.775 4.546 7.477-1.405.439-2.696.9-4.052 1.324zM232.378 86.784c-2.102-.086-4.147-.223-6.196-.307-1.368-.003-1.587.198-1.696 1.562-.222 5.411-.508 12.397-.782 17.806-.013.315-.027.682-.054 1.313-.448-.598-.7-.871-.947-1.249-1.75-2.282-3.065-4.809-4.166-7.485-1.344-3.16-2.674-7.95-3.432-11.296-.085-.477-.28-.853-.858-.876-1.519-.168-3.036-.388-4.557-.503-1.049-.096-1.219.213-1.21 1.266.048 2.685.187 7.006.131 9.634-.126 6.941-.673 13.864-1.533 20.722-.158 1.309-.319 2.67-.426 3.981-.091.943.16 1.217 1.155 1.31l.841.035 6.152.094c1.314.054 1.476-.045 1.479-1.413.004-1.367-.281-11.114-.206-14.215.104.004 4.224 9.907 5.638 13.912.421 1.28 1.232 1.998 2.598 2.106 1.521.115 3.044.178 4.567.24.63.026.852-.228.877-.859.026-.63-.056-1.212-.03-1.842.171-2.888.29-5.776.514-8.661a148.912 148.912 0 012.022-15.965c.404-2.141.819-5.859 1.171-8.003.147-1.047-.057-1.213-1.052-1.307zM254.645 101.056c1.89.469 3.715.973 5.62 1.392 1.238.269 1.496-.037 1.598-1.27.168-1.983.267-3.382.484-5.349.103-1.233.311-1.554-1.026-1.854-2.273-.477-13.13-3.801-16.266-4.871-.453-.139-.963.09-1.086.492-.742 2.247-1.454 4.393-2.15 6.488-.201.654.125 1.028.728 1.212l3.92 1.201c.452.139.89.328 1.292.451-.601 1.96-1.154 3.77-1.76 5.564-2.179 6.754-4.391 13.444-6.555 20.148-.405 1.141-.284 1.288.888 1.591 2.675.6 5.335 1.25 8.01 1.848.92.227 1.214-.013 1.174-.959-.154-2.906.341-5.778.819-8.601.549-3.405 1.112-6.861 1.775-10.286.438-2.505.845-4.909 1.313-7.516.467.088.819.195 1.222.319zM287.516 107.539c-.618-.198-1.21-.442-1.83-.64-2.152-.717-4.263-1.406-6.433-2.196-1.077-.358-1.917-.199-2.851.707-3.049 3.12-18.123 17.65-22.549 21.895-1.017 1.04-1.027 1.157.196 1.978 1.759 1.152 3.49 2.351 5.249 3.503 1.001.683 1.955 1.337 2.982 1.974.761.471.978.42 1.432-.412.083-.134.122-.296.204-.43.868-1.998 3.225-7.094 3.597-7.792l5.36 3.325c-.276.447-3.693 5.257-5.175 7.246-.459.643-.464.95.167 1.527a37.041 37.041 0 001.817 1.56c2.111 1.681 4.456 2.888 6.913 3.916.931.393 1.059.286 1.361-.701.084-.134.122-.296.16-.458 3.29-10.889 9.987-33.46 10.093-33.828.128-.603-.074-.975-.693-1.174zm-12.368 15.653c-1.278-.732-2.496-1.363-3.73-2.066 1.759-2.436 3.735-4.426 6.108-6.357-.368 2.987-1.273 5.643-2.378 8.423z"/><path d="M216 134.917c-44.648 0-80.843 36.195-80.843 80.843s36.195 80.843 80.843 80.843 80.843-36.195 80.843-80.843-36.195-80.843-80.843-80.843zm32.212 32.049l4.571-8.386a68.256 68.256 0 0125.068 28.929l-8.921 3.396a58.701 58.701 0 00-20.718-23.939zm24.038 32.84l8.938-3.403a67.705 67.705 0 012.132 9.818l-9.51.728a58.073 58.073 0 00-1.56-7.143z"/><circle class="ast4" cx="290.082" cy="149.479" r="6.761"/><g><path class="ast4" d="M188.49 304.277c-3.364-.637-6.515-.231-9.169 2.231-5.855 5.162-7.661 12.528-8.229 14.847-.543 2.835-.842 5.767-.34 8.672.841 5.07 3.835 8.384 8.534 9.938 3.797 1.258 7.609.603 11.188-1.33.631-.318.656-.816.554-1.42-.341-2.448-.703-4.847-1.044-7.294.008-.167-.051-.302-.092-.488-.2-.643-.66-.766-1.243-.429-.175.157-.35.315-.572.454-1.524 1.154-3.286 1.764-5.159 1.936-2.575.235-5.471-1.743-5.682-4.816-.047-1.035-.095-2.069.073-3.076.413-3.225 1.758-6.086 3.639-8.737a8.333 8.333 0 012.879-2.601c1.216-.654 2.397-.644 3.574.098 1.129.723 3.11 4.32 3.359 4.981.348.7.723 1.185 1.576.446 1.657-1.497 3.284-3.063 4.912-4.628.998-.964 1.022-1.462.264-2.55-2.252-3.193-5.064-5.533-9.022-6.234zM227.405 344.161c-2.655-11.062-8.261-33.93-8.356-34.3-.195-.583-.559-.804-1.192-.662-.634.141-1.269.229-1.903.37-2.221.468-4.39.937-6.662 1.351-1.11.234-1.757.795-2.104 2.049-1.059 4.232-6.742 24.385-8.421 30.283-.354 1.411-.304 1.518 1.166 1.609 2.102.108 4.202.268 6.303.376 1.207.084 2.361.167 3.57.198.894.024 1.057-.13 1.028-1.077.004-.158-.044-.317-.04-.475-.259-2.164-.796-7.753-.829-8.542l6.308.166c-.014.526-.535 6.403-.811 8.867-.074.788.077 1.054.914 1.234.784.178 1.57.304 2.354.43 2.673.385 5.307.244 7.945-.107 1.004-.132 1.06-.288.823-1.293.004-.158-.045-.318-.093-.477zm-16.591-15.109c.287-2.99.991-5.707 2.065-8.571 1.188 2.766 1.749 5.515 2.196 8.472-1.471.015-2.841.084-4.261.099zM265.084 333.988c-2.148-3.149-4.075-8.379-5.465-11.904-2.368-6.022-4.542-12.447-6.878-18.537-.188-.38-.376-.76-.58-1.189-.528-1.041-.662-1.106-1.804-.709-1.938.672-3.84 1.443-5.76 2.166-.646.224-.857.576-.801 1.224.03 1.047.666 13.625.26 14.378-.573-.691-5.834-7.992-7.653-11.312-.714-1.255-.763-1.238-2.104-.772l-4.819 1.506c-.696.241-.811.393-.584 1.205 1.096 3.96 2.044 7.972 3.238 11.897 1.923 6.344 4.461 13.978 6.483 20.288.121.347.259.745.446 1.125.392.81.744 1.022 1.638.711 1.688-.586 3.427-1.189 5.082-1.875 1.174-.463 1.236-.763.624-1.887-2.11-3.998-4.472-9.521-5.805-13.844-.209-.762-.727-2.252-.935-3.015.482.11 3.787 3.86 5.034 5.208.54.592 1.174.817 1.951.492.845-.293 1.706-.537 2.484-.862 1.075-.429 1.269-.83 1.155-1.959a4.348 4.348 0 00-.059-.814c-.105-1.745-.189-4.553-.012-6.285.085-1.198 5.985 14.84 7.25 17.685.429 1.075.729 1.139 1.804.709 1.755-.72 3.575-1.408 5.378-2.144.829-.343.943-.66.432-1.486z"/></g></symbol>
+</svg>
+
+<!--
+====================================================================================================
+-->
+		
+		<header>
+			<h1>SVG <code>&lt;symbol&gt;</code> sprite preview</h1>
+			<p>This preview features two methods of using the generated sprite in conjunction with inline SVG. Please have a look at the HTML source for further details and be aware of the following constraints:</p>
+			<ul>
+				<li>Your browser has to <a href="http://caniuse.com/#feat=svg-html5" target="_blank">support inline SVG</a> for these techniques to work.</li>
+				<li>The embedded sprite (A) slightly differs from the generated external one. Please <a href="https://github.com/jkphl/svg-sprite/blob/master/docs/configuration.md#defs--symbol-mode" target="_blank">see the documentation</a> for details on how to create such an embeddable sprite.</li>
+				<li>Internet Explorer up to version 11 doesn't support external sprites for use with inline SVG. For IE 9-11, you may polyfill this functionality with <a href="https://github.com/jonathantneal/svg4everybody" target="_blank">SVG for Everybody</a>.</li>
+			</ul>
+		</header>
+		<section>
+
+<!--
+	
+A) Inline SVG with embedded sprite
+====================================================================================================
+These SVG images make use of fragment identifiers (IDs) and are extracted out of the inline sprite
+embedded above. They may be styled via CSS.
+
+-->
+
+			<h3>A) Inline SVG with embedded sprite</h3>
+			<ul>
+
+				<li title="santa">
+					<div class="icon-box">
+						
+						<!-- santa -->
+						<svg class="svg-santa-dims">
+							<use xlink:href="#santa"></use>
+						</svg>
+						
+					</div>
+					<h2>santa</h2>
+				</li>
+			</ul>
+
+<!--
+====================================================================================================
+-->
+
+		</section>
+		<section>
+
+<!--
+	
+B) Inline SVG with external sprite (IE 9-11 with polyfill only)
+====================================================================================================
+These SVG images make use of an URL + fragment identifiers (IDs) and refer to the regular external
+SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
+
+-->
+
+			<h3>B) Inline SVG with external sprite (IE 9-11 with polyfill only)</h3>
+			<p>Please set the <code>inline</code> option to <code>FALSE</code> in order to preview this method.</p>
+
+<!--
+====================================================================================================
+-->
+
+		</section>
+		<footer>
+			<p>Generated at Sun, 20 Oct 2019 13:05:49 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
+		</footer>
+	</body>
+</html>
