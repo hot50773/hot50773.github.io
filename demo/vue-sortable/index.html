@@ -10,8 +10,11 @@
 </head>
 
 <body>
-  <div class="container my-5">
+  <div id="app" class="container my-5">
     <div class="row">
+      <div class="col-12">
+        <h1>Vue Sortable With Tab Content</h1>
+      </div>
       <div class="col-md-6">
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -35,19 +38,44 @@
 
         <!-- Tab panes -->
         <div class="tab-content">
-          <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">home</div>
+          <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">home
+            <h3>Draggable 1</h3>
+            <draggable class="dragArea list-group" :list="list1" :group="{ name: 'people', pull: 'clone', put: false }"
+              :clone="cloneDog" @change="log">
+              <div class="list-group-item" v-for="element in list1" :key="element.id">
+                {{ element.name }}
+              </div>
+            </draggable>
+          </div>
+
           <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">profile</div>
           <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">msg</div>
           <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">setting</div>
         </div>
       </div>
-      <div class="col-md-6"></div>
+      <div class="col-md-6">
+        <h3>Draggable 2</h3>
+        <draggable class="dragArea list-group" :list="list2" group="people" @change="log">
+          <div class="list-group-item" v-for="element in list2" :key="element.id">
+            {{ element.name }}
+          </div>
+        </draggable>
+      </div>
     </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/cjs/popper.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/popper.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+
+  <!-- Vue -->
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <!-- CDNJS :: Sortable (https://cdnjs.com/) -->
+  <script src="//cdn.jsdelivr.net/npm/sortablejs@1.8.4/Sortable.min.js"></script>
+  <!-- CDNJS :: Vue.Draggable (https://cdnjs.com/) -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/Vue.Draggable/2.20.0/vuedraggable.umd.min.js"></script>
+  <script src="./index.js"></script>
 </body>
 
 </html>
