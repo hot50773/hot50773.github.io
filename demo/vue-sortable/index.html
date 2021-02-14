@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" />
+</head>
+
+<body>
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-6">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+              aria-selected="true">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+              aria-selected="false">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages"
+              aria-selected="false">Messages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings"
+              aria-selected="false">Settings</a>
+          </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">home</div>
+          <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">profile</div>
+          <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">msg</div>
+          <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">setting</div>
+        </div>
+      </div>
+      <div class="col-md-6"></div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/cjs/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
