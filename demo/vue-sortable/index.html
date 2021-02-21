@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" />
+
+  <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" />
+  <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
@@ -38,12 +41,16 @@
 
         <!-- Tab panes -->
         <div class="tab-content">
-          <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">home
+          <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
             <h3>Draggable 1</h3>
             <draggable class="dragArea list-group" :list="list1" :group="{ name: 'people', pull: 'clone', put: false }"
-              :clone="cloneDog" @change="log">
+              :clone="cloneDog" @change="log" :move="checkMove" handle=".handle" ghost-class="ghost">
               <div class="list-group-item" v-for="element in list1" :key="element.id">
-                {{ element.name }}
+                <span class="handle">
+                  <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                </span>
+                <span>{{ element.name }}</span>
+                <input type="text" v-model="element.order">
               </div>
             </draggable>
           </div>
@@ -55,7 +62,7 @@
       </div>
       <div class="col-md-6">
         <h3>Draggable 2</h3>
-        <draggable class="dragArea list-group" :list="list2" group="people" @change="log">
+        <draggable class="dragArea list-group" :list="list2" :group="{name:'people2', put: true}" @change="log">
           <div class="list-group-item" v-for="element in list2" :key="element.id">
             {{ element.name }}
           </div>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Draggable: Simple Demo</title>
+  <style>
+    .item {
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-bottom-width: 0;
+    }
+
+    .item:last-child {
+      border-bottom-width: 1px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <!-- Vue Drabble 元件 -->
+    <draggable v-model="myArray">
+      <!-- 可拖曳項目 -->
+      <div class="item" v-for="element in myArray" :key="element.id">
+        {{element.name}}
+      </div>
+    </draggable>
+  </div>
+  <!-- 必要套件 -->
+  <!-- Vue -->
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <!-- CDNJS :: Sortable (https://cdnjs.com/) -->
+  <script src="//cdn.jsdelivr.net/npm/sortablejs@1.8.4/Sortable.min.js"></script>
+  <!-- CDNJS :: Vue.Draggable (https://cdnjs.com/) -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/Vue.Draggable/2.20.0/vuedraggable.umd.min.js"></script>
+  <script>
+    // JS 初始化 Vue Draggable 套件
+    window.addEventListener('DOMContentLoaded', (event) => {
+      var app = new Vue({
+        el: '#app',
+        components: {
+          // 在 HTML 直接引用，須用 window['vuedraggable']
+          draggable: window['vuedraggable']
+        },
+        data: {
+          myArray: [
+              { name: "dog 1", id: 1 },
+              { name: "dog 2", id: 2 },
+              { name: "dog 3", id: 3 }
+            ]
+        }
+        // data() {
+        //   return {
+        //     myArray: [
+        //       { name: "dog 1", id: 1 },
+        //       { name: "dog 2", id: 2 },
+        //       { name: "dog 3", id: 3 }
+        //     ]
+        //   };
+        // }
+      })
+    })
+  </script>
+</body>
+
+</html>
