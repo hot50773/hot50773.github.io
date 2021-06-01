@@ -1,0 +1,3 @@
+[submodule "my-dashboard-kit"]
+	path = my-dashboard-kit
+	url = https://github.com/hot50773/my-daskboard-kit.git
