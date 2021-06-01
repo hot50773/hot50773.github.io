@@ -1,2 +1,2 @@
-# hot50773.github.io
-My Website
+# Dicoding
+hot50773.github.io
