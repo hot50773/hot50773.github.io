@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/themes/monokai.css' />
+  <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/themes/kimbie-dark.min.css' integrity='sha512-WaOpvZu9dM5Unf4Z6BxJb60NmsZc9YSf50PTlMHQiJn0Jm4TU+dQbr/lsfQICDVMOctGF83UP1lCsVSynMmK7w==' crossorigin='anonymous'/> -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/html.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/css.js'></script>
+  <!-- <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap-reboot.css" /> -->
+  <title>文字反白顏色客製化</title>
+</head>
+
+<body>
+  <h1>使用 CSS 偽元素 ::selection，修改文字反白樣式</h1>
+  <ul>
+    <li> ::selection 只支援少數屬性的修改：例如顏色</li>
+    <li>::selection 是在CSS3之後才有，所以在IE9+才支援</li>
+    <li>在Firefox中需要加前缀“-moz”</li>
+  </ul>
+
+  <pre>
+<code data-language="css">
+::selection {
+	background: 背景顏色值;
+	color: 文字顏色值;
+}
+::-moz-selection {
+	background: 背景顏色值;
+	color: 文字顏色值;
+}
+</code>
+</pre>
+  <h2>允許的屬性</h2>
+
+  只有一小部分 CSS 屬性可以用於 ::selection 選擇器：
+  <ul>
+    <li><a href="/zh-CN/docs/Web/CSS/color"><code>color</code></a></li>
+    <li><a href="/zh-CN/docs/Web/CSS/background-color"><code>background-color</code></a></li>
+    <li><a href="/zh-CN/docs/Web/CSS/cursor"><code>cursor</code></a></li>
+    <li><a href="/zh-CN/docs/Web/CSS/caret-color"><code>caret-color</code></a></li>
+    <li><a href="/zh-CN/docs/Web/CSS/outline"><code>outline</code></a> and its longhands</li>
+    <li><a href="/zh-CN/docs/Web/CSS/text-decoration"><code>text-decoration</code></a> and its associated properties
+    </li>
+    <li><a class="only-in-en-us" title="Currently only available in English (US)"
+        href="/en-US/docs/Web/CSS/text-emphasis-color"><code>text-emphasis-color</code> <span>(en-US)</span></a></li>
+    <li><a href="/zh-CN/docs/Web/CSS/text-shadow"><code>text-shadow</code></a></li>
+  </ul>
+
+  <p>要特别注意的是，<a href="/zh-CN/docs/Web/CSS/background-image"><code>background-image</code></a> 会如同其他屬性一樣被忽略。</p>
+  <hr>
+  <h2>DEMO</h2>
+  <style>
+    .custom::selection,
+    .custom::-moz-selection {
+      background-color: red;
+      text-shadow: 0 0 5px greenyellow;
+      color: white;
+    }
+  </style>
+
+  <p class="custom">請反白這段文字來看變化請反白這段文字來看變化請反白這段文字來看變化請反白這段文字來看變化</p>
+
+  <h4>Code</h4>
+  <pre>
+  <code data-language="html">
+  <style>
+    .custom::selection,
+    .custom::-moz-selection {
+      background-color: red;
+      text-shadow: 0 0 5px greenyellow;
+      color: white;
+    }
+  </style>
+
+  <p class="custom">請反白這段顏色來看變化</p>
+</code>
+</pre>
+
+  <h2>Reference</h2>
+  <ul>
+    <li><a href="https://twweeb.org/css-selection/">https://twweeb.org/css-selection/</a></li>
+    <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/::selection">MDN - ::selection</a></li>
+  </ul>
+</body>
+
+</html>
