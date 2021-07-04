@@ -30,6 +30,10 @@
     <li><a href="https://juejin.cn/post/6844903477986983943">掘金 - 探索两种优雅的表单验证——策略设计模式和 ES6 的 Proxy 代理模式</a></li>
   </ul>
   <script>
+    function copyData (jsonData) {
+      return JSON.parse(JSON.stringify(jsonData))
+    }
+
     var form = document.querySelector('#formRegist')
 
     // 1.策略方法
@@ -64,15 +68,16 @@
           let errorMsg = rule.errorMsg //'用户名不能为空'
 
           this.cache.push(() => {
-            let strategy = strategyAry.shift() // shift() 方法會移除並回傳陣列的第一個元素，也就是策略名稱
-            strategyAry.unshift(domInput.value) // unshift() 會新增一個或多個元素至陣列的開頭，也就是 input 值
+            var strategyArgs, name
 
-            strategyAry.push(errorMsg) // 新增 errorMsg 至陣列的結尾，[input.value, 6, errorMsg]
+            strategyArgs = copyData(strategyAry)
+            name = strategyArgs.shift() // shift() 方法會移除並回傳陣列的第一個元素，也就是策略名稱
+            strategyArgs.unshift(domInput.value) // unshift() 會新增一個或多個元素至陣列的開頭，也就是 input 值
 
-            console.log('log strategies')
-            console.log(strategies)
+            strategyArgs.push(errorMsg) // 新增 errorMsg 至陣列的結尾，[input.value, 6, errorMsg]
+
             // 最後 strategyAry 的格式為 [inputValue, ...otherArgs, errorMsg]
-            return strategies[strategy].apply(this, strategyAry)
+            return strategies[name].apply(this, strategyArgs)
           })
         }
       }
