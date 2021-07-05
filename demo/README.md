@@ -12,9 +12,9 @@
 
 [vue-sortable](./vue-sortable)
 
-[vue-sortable | simple](./vue-sortable/simple.html)
+[vue-sortable (simple)](./vue-sortable/simple.html)
 
 [vue-todo-list](./vue-todo-list)
 
-[vue-todo-list | with v-template](./vue-todo-list/with-v-template.html)
+[vue-todo-list (with v-template)](./vue-todo-list/with-v-template.html)
 
