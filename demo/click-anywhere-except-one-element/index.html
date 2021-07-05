@@ -1,41 +1,40 @@
-<!DOCTYPE HTML> 
-<html> 
+<!DOCTYPE HTML>
+<html>
 
-<head> 
-	<title> 
-		How to click anywhere of page 
-		except one element using jQuery ? 
-	</title> 
-	
-	<script src= 
-"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> 
-	</script> 
-	
-	<style> 
-		body { 
-			height: auto; 
-		} 
-		#t { 
-			height: 100px; 
-			width: 350px; 
-			background: green; 
-			color: white; 
-			text-align:justify; 
-		} 
-	</style> 
-</head> 
+<head>
+	<title>
+		How to click anywhere of page
+		except one element using jQuery ?
+	</title>
 
-<body style = "text-align:center;"> 
-	
-	<h1 style = "color:green;" > 
-		GeeksforGeeks 
-	</h1> 
-	
-	<p id = "GFG_UP" style = 
-		"font-size: 15px; font-weight: bold;"> 
-	</p> 
-	
-	<textarea id = "t"> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+	</script>
+
+	<style>
+		body {
+			height: auto;
+		}
+
+		#t {
+			height: 100px;
+			width: 350px;
+			background: green;
+			color: white;
+			text-align: justify;
+		}
+	</style>
+</head>
+
+<body style="text-align:center;">
+
+	<h1 style="color:green;">
+		GeeksforGeeks
+	</h1>
+
+	<p id="GFG_UP" style="font-size: 15px; font-weight: bold;">
+	</p>
+
+	<textarea id="t">
 		jQuery is an open source JavaScript library 
 		that simplifies the interactions between an 
 		HTML/CSS document, or more precisely the 
@@ -45,33 +44,46 @@
 		browser event handling, DOM animations, 
 		Ajax interactions, and cross-browser 
 		JavaScript development. 
-	</textarea> 
-	<br> 
-	
-	<button onclick = "gfg_Run()"> 
-		click here 
-	</button> 
-	
-	<p id = "GFG_DOWN" style = "color:green; 
-		font-size: 20px; font-weight: bold;"> 
-	</p> 
-	
-	<script> 
-		var el_up = document.getElementById("GFG_UP"); 
-		var el_down = document.getElementById("GFG_DOWN"); 
-		
-		el_up.innerHTML = "Click anywhere on the body" 
-					+ " except textarea to see effect."; 
-		
-		$('html').click(function() { 
-			el_down.innerHTML = "Clicked on the body" 
-						+ " except textarea."; 
-		}); 
-		
-		$('#t').click(function(event) { 
-			event.stopPropagation(); 
-		}); 
-	</script> 
-</body> 
+	</textarea>
+	<br>
 
-</html> 
+	<button onclick="gfg_Run()">
+		click here
+	</button>
+
+	<p id="GFG_DOWN" style="color:green;
+		font-size: 20px; font-weight: bold;">
+	</p>
+
+	<pre><code>
+		var el_up = document.getElementById("GFG_UP");
+		var el_down = document.getElementById("GFG_DOWN");
+
+		el_up.innerHTML = "Click anywhere on the body except textarea to see effect."
+		$('html').click(function() {
+			el_down.innerHTML = "Clicked on the body"
+						+ " except textarea.";
+		});
+
+		$('#t').click(function(event) {
+			event.stopPropagation();
+		});
+	</code></pre>
+
+	<script>
+		var el_up = document.getElementById("GFG_UP");
+		var el_down = document.getElementById("GFG_DOWN");
+
+		el_up.innerHTML = "Click anywhere on the body except textarea to see effect."
+		$('html').click(function() {
+			el_down.innerHTML = "Clicked on the body"
+						+ " except textarea.";
+		});
+
+		$('#t').click(function(event) {
+			event.stopPropagation();
+		});
+	</script>
+</body>
+
+</html>
