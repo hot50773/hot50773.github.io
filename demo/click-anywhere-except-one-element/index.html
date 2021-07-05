@@ -56,23 +56,23 @@
 		click here
 	</button>
 
-	<p id="GFG_DOWN" style="color:green;
+	<p id="GFG_DOWN" style="background: darkmagenta;min-height: 40px; color:rgb(255, 255, 255);
 		font-size: 20px; font-weight: bold;">
 	</p>
 
-	<pre><code>
-		var el_up = document.getElementById("GFG_UP");
-		var el_down = document.getElementById("GFG_DOWN");
+	<pre style="padding: 15px;"><code>
+var el_up = document.getElementById("GFG_UP");
+var el_down = document.getElementById("GFG_DOWN");
 
-		el_up.innerHTML = "Click anywhere on the body except textarea to see effect."
-		$('html').click(function() {
-			el_down.innerHTML = "Clicked on the body"
-						+ " except textarea.";
-		});
+el_up.innerHTML = "Click anywhere on the body except textarea to see effect."
+$('html').click(function() {
+	el_down.innerHTML = "Clicked on the body"
+				+ " except textarea.";
+});
 
-		$('#t').click(function(event) {
-			event.stopPropagation();
-		});
+$('#t').click(function(event) {
+	event.stopPropagation();
+});
 	</code></pre>
 
 	<script>
@@ -87,6 +87,7 @@
 
 		$('#t').click(function(event) {
 			event.stopPropagation();
+			el_down.innerHTML = "textarea clicked";
 		});
 	</script>
 </body>
