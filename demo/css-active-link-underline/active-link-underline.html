@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - Active Link Underline</title>
+</head>
+<style>
+  /* reset */
+  * { margin: 0; padding: 0; }
+  a, a:hover, a:focus { text-decoration: none; color: #333; }
+
+  /* font */
+  @import url(https://fonts.googleapis.com/css?family=Metrophobic:regular);
+
+  html, body {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Metrophobic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    }
+
+  /* variables */
+  html, body {
+    /* --dark: #7ac1bb;
+    --light: #e7f7f2;
+    --color-1: #ffceb0;
+    --color-2: #f0cb7c;
+    --color-3: #FBC78D;
+    --sectoin-txt-color: #4b4d4f;
+    --section-title-color: #E65100;
+    --section-title-color:rgb(74, 71, 71); */
+    --dark: #1d1133;
+    --light: #f9f7fd;
+
+    --color-1: #ff9100;
+    --color-2: #f10366;
+    --color-3: #6173ff;
+    --color-txt: #fff;
+
+    /* nav */
+    --nav-bg: var(--dark);
+    --nav-logo-color: #ff9100;
+    /* --nav-logo-color: #ffe761; */
+    --nav-txt-color: var(--light);
+    --color-gradient: linear-gradient(
+                          -90deg,
+                          var(--color-1) 0%, var(--color-2) 50%, var(--color-3) 100%
+                        );
+    /* page-content */
+    --sectoin-txt-color: #42425a;
+    --section-title-color: #3a3474;
+  }
+
+  /* nav */
+  .nav-wrapper {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: var(--nav-bg);
+    color:var(--nav-txt-color);
+  }
+
+  h1, h2, h3, h4, h5, h6 { color: var(--section-title-color); }
+
+  .nav-wrapper ul li { list-style: none; }
+
+  .nav-logo {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    color: var(--nav-logo-color);
+  }
+
+  .desktop-menu {
+    display: flex;
+    flex-grow: 1;
+    align-content: center;
+    background: var(--color-bg);
+
+    /* desktop */
+  }
+
+  .desktop-menu--start { justify-content: flex-start; }
+  .desktop-menu--center { justify-content: center; }
+  .desktop-menu--end {  justify-content: flex-end; }
+
+
+  .nav-item {
+    padding: 5px;
+  }
+
+  .nav-link {
+    position: relative;
+    transition: ease 1.5s;
+    font-weight: 600;
+    color:var(--nav-txt-color);
+  }
+
+  .nav-link::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    position: absolute;
+    /* centered the line::start */
+    left: 0;
+    right: 0;
+    margin: auto;
+    /* centered the line::end */
+    bottom: -0.4rem;
+    border-radius: 3px;
+    background: var(--color-gradient);
+    transition: ease 0.2s;
+    /* 改變透明度而非背景顏色，讓動畫效果更佳 */
+    opacity: 0;
+    }
+
+  .nav-link:hover { color: #cfcfd8; }
+
+  .nav-link:hover::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    margin: auto;
+    /* background: var(--color-gradient); */
+    transition: ease 0.2s;
+    opacity: 1;
+    }
+
+  .nav-right {
+    margin-left: 0;
+  }
+
+  /* contents */
+  .page-wrapper {
+    /* background-color: var(--color-bg-light); */
+  }
+
+  .content {
+    width: 70%;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  .section {
+    background-color: #fff;
+    color: var(--sectoin-txt-color);
+  }
+
+  .section-detail {
+    background: var(--color-bg-light);
+  }
+
+
+</style>
+
+<body>
+  <nav class="nav-wrapper">
+    <div class="nav-logo">LOGO HERE</div>
+    <ul class="desktop-menu desktop-menu--end">
+      <li class="nav-item"><a class="nav-link" href="#">HOME</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">ABOUT</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">FEATURES</a></li>
+    </ul>
+  </nav>
+
+  <article class="page-wrapper">
+    <div class="section">
+      <div class="content">
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci quas odit libero illo voluptates, fugit voluptatum velit iure aperiam blanditiis, vel sequi ut nobis, maxime magnam magni harum doloremque. Eum!</div>
+        <div>Eum aspernatur incidunt explicabo, vero quaerat culpa esse eos iusto ut blanditiis aperiam quia, in fuga est reiciendis! Architecto fugiat quibusdam necessitatibus totam! Debitis nesciunt quo eum dignissimos et tenetur.</div>
+        <div>Dolor natus amet molestiae sequi officia illum porro quam eveniet commodi quos, ad magni iure quasi. Consequuntur, repellendus temporibus harum quas eligendi assumenda pariatur velit perspiciatis nemo nesciunt maxime rerum?</div>
+        <div>Odit hic recusandae voluptatum at dolore, tempore illum possimus itaque! Ab doloremque ullam dolorem itaque veritatis, debitis nulla aperiam! Reprehenderit illo nostrum perferendis magnam tenetur quae? Exercitationem quae fugiat asperiores.</div>
+        <div>Molestiae enim ab sunt earum harum illum omnis, eius magni vel. Aut cumque aliquam autem quia adipisci, culpa ab necessitatibus, corporis consectetur deleniti assumenda nihil? Recusandae nam possimus animi doloremque.</div>
+      </div>
+    </div>
+    <div class="section section-detail">
+      <div class="content">
+        <h1>Top Menu with active link underlined - Inspire by FireFox</h1>
+        <br>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias nulla eius dolorem provident et maxime tenetur commodi laudantium sit saepe, sint nihil repudiandae iusto exercitationem maiores iste voluptas necessitatibus cum?
+
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil accusantium cumque iusto officia! Corporis id cum asperiores quo repellat nam, nobis, magnam excepturi, perspiciatis esse voluptatibus reiciendis dolore dolores eligendi.
+
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro cum soluta accusantium alias explicabo corporis, nam fugit commodi iure quos earum possimus aliquid, minus perspiciatis, dolore at dolorum officia esse.
+        </p>
+        <br>
+        <h1>概觀</h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias nulla eius dolorem provident et maxime tenetur commodi laudantium sit saepe, sint nihil repudiandae iusto exercitationem maiores iste voluptas necessitatibus cum?
+
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil accusantium cumque iusto officia! Corporis id cum asperiores quo repellat nam, nobis, magnam excepturi, perspiciatis esse voluptatibus reiciendis dolore dolores eligendi.
+
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro cum soluta accusantium alias explicabo corporis, nam fugit commodi iure quos earum possimus aliquid, minus perspiciatis, dolore at dolorum officia esse.
+        </p>
+        <br>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, saepe nesciunt consequuntur id quaerat eveniet dolore in! Possimus cumque eveniet recusandae, nobis voluptatem repellat et natus cupiditate quas odit tempora.
+        Deserunt, consequuntur officia magni at error et hic quasi, dignissimos aliquam nobis porro fuga minus quas numquam. Fugit qui libero voluptate nemo nesciunt omnis natus minus! Harum eaque quibusdam laboriosam!
+        Repudiandae perspiciatis, eius nesciunt alias esse et nostrum numquam aliquid, cupiditate assumenda sequi molestias quam impedit doloremque quibusdam voluptas minus mollitia aperiam pariatur totam. Quia veniam magnam voluptas odit labore!
+        Eveniet labore recusandae provident reiciendis explicabo possimus, atque minus illum, reprehenderit commodi accusantium dolor, amet eaque eligendi a repellat dolorem sed! Earum vitae repellendus maiores recusandae quaerat deserunt sunt minus?
+        Rerum soluta adipisci dolores, excepturi nihil consequatur quaerat, accusantium magni at, tempore quod. Cum eum tempore ut explicabo repellat corporis corrupti doloremque. Facilis nihil autem atque et asperiores illum inventore!
+        </p>
+
+        <p>
+          <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, nostrum accusantium accusamus exercitationem illum soluta aperiam quia repellendus voluptates, quasi adipisci velit magni modi possimus debitis? Quam voluptatibus dignissimos qui!</span>
+          <span>Iusto, itaque cumque fugit adipisci quisquam deserunt repellendus illo omnis voluptatibus rem debitis, quasi impedit distinctio! Molestias mollitia provident, ab architecto asperiores animi necessitatibus placeat nobis facilis adipisci officiis tempore?</span>
+          <span>Deserunt eveniet nobis excepturi, eaque nemo molestiae reiciendis ex odio laboriosam officia quo atque quasi exercitationem accusamus, possimus hic asperiores voluptatum totam animi? Quidem corporis labore ab tempore repellat possimus.</span>
+          <span>Perspiciatis architecto vitae facere tenetur rem est optio consequuntur accusantium nulla repellendus ut amet a, blanditiis, ullam voluptate accusamus pariatur earum dolorem perferendis repudiandae nisi ipsa nobis, adipisci fuga? Numquam?</span>
+          <span>Perferendis similique quos ut error quis laborum iure nesciunt quisquam est. Dolores hic eum delectus vero quam ratione est amet consequuntur, quasi beatae culpa mollitia dicta repudiandae consequatur temporibus et.</span>
+        </p>
+      </div>
+    </div>
+  </article>
+</body>
+</html>

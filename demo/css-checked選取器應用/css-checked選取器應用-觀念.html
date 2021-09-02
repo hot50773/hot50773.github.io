@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS checked 選取器的應用 | CSSCoke</title>
+  <style>
+    input:checked + span { color: #f00; }
+
+    #amos:checked ~ div {
+      color: #00f;
+    }
+  </style>
+</head>
+<body>
+  <input type="checkbox" name="" id="amos">
+  <div>
+    <label>
+      <input type="checkbox" name="" id="">
+      <span>
+        Amos CSS coke
+      </span>
+    </label>
+  </div>
+
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio tempore, non iste sit beatae sequi! Dolor repellat tempore id, non eos porro architecto vitae perferendis quasi blanditiis quae, optio deleniti.</p>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+
+  <label for="amos">ＡＭＯＳ</label>
+
+</body>
+</html>
+
+<!--
+  Checked 偽類選取器（代表狀態，其他有 hover, focus）
+
+  1. 使用 label 容器
+  input:checkbox 外包一層 label -> 『label 內的 span』 就可以當選取器使用
+
+  搭配 "+" 選取器 (選到緊跟在後面的「那一個」)：input 被選取，後方 span 就變色
+
+  2. 遙控選取：label 和 input 拆開來
+  - 使用 label-for，選到很遠的 input
+  - 搭配 "~" 選取器（選到後面「所有元素」）：input 被選取，後面所有 div 會變色
+
+-->
