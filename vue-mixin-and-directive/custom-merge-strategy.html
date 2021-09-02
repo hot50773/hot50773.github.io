@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Mixin</title>
+  </head>
+  <body>
+    <div id="app">
+      <button @click="handleClick">log</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script> -->
+    <script>
+
+    // Vue 預設的策略：物件合併 -> 後者覆蓋前者
+    // Vue.config.optionMergeStrategies.methods = function (toVal, fromVal, vm) {
+    //   console.log(toVal, fromVal)
+
+    //   return fromVal
+    // }
+
+    // 改變策略 -> 每一個都會執行
+    Vue.config.optionMergeStrategies.methods = function (toVal, fromVal, vm) {
+      if (!toVal) toVal = {}
+      console.log(toVal, fromVal)
+
+      return Object.assign(toVal, fromVal)
+    }
+
+    const mixin1 = {
+        methods: {
+          log(click) {
+            console.log('log 1');
+          }
+        }
+      }
+
+      const app = new Vue({
+        el: "#app",
+        mixins: [mixin1],
+        methods: {
+          handleClick () {
+            this.log('btn clicked')
+          },
+          log(click) {
+            console.log('my log');
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
