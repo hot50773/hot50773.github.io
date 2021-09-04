@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RWD Header with Pure CSS and JS (Use Float)</title>
+  </head>
+  <link rel="stylesheet" href="index.css" />
+
+  <body>
+    <header class="header">
+      <div class="nav-brand">
+        <div class="brand-item">
+          <img src="" alt="logo" />
+        </div>
+      </div>
+
+      <div class="nav-toggler" data-target=".nav-bar">
+        <div class="nav-toggler-item">toggle</div>
+      </div>
+
+      <ul class="nav-social">
+        <li class="social-item">
+          <a href="" class="social-link"><img src="" alt="icon1" /></a>
+        </li>
+        <li class="social-item">
+          <a href="" class="social-link"><img src="" alt="icon2" /></a>
+        </li>
+        <li class="social-item">
+          <a href="" class="social-link"><img src="" alt="icon3" /></a>
+        </li>
+        <li class="social-item">
+          <a href="" class="social-link"><img src="" alt="icon4" /></a>
+        </li>
+      </ul>
+      <ul class="nav-bar collapse-lg">
+        <li class="nav-item"><a href="" class="nav-link">Page1</a></li>
+        <li class="nav-item"><a href="" class="nav-link">Page2</a></li>
+        <li class="nav-item"><a href="" class="nav-link">Page3</a></li>
+        <li class="nav-item"><a href="" class="nav-link">Page4</a></li>
+      </ul>
+    </header>
+
+    <script>
+      function toggle (action = null) {
+        const toggler = this
+
+        const targetStr = toggler.dataset.target
+        const target = document.querySelector(targetStr)
+
+        const showClass = 'show'
+        const hasShow = target.classList.contains(showClass)
+
+        const show = () => { target.classList.add(showClass) }
+        const hide = () => {  target.classList.remove(showClass) }
+
+        if (action === 'show') return show()
+        if (action === 'hide') return hide()
+
+        if (hasShow) return hide()
+        else return show()
+      }
+
+      const navToggler = document.querySelector('.nav-toggler')
+
+      navToggler.addEventListener('click', toggle)
+    </script>
+  </body>
+</html>
