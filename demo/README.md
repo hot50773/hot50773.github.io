@@ -12,6 +12,8 @@
 
 [css-rwd-header (Float)](./css-rwd-header/index.html)
 
+[css-loading-animation/loading-ripple](./css-loading-animation/loading-ripple.html)
+
 [vue_basic](./vue_basic/basic_syntax.html)
 
 [vue-sortable](./vue-sortable)

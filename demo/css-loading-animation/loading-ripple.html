@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .loading-wrap {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .loading-ripple {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+      }
+
+      .loading-ripple::before,
+      .loading-ripple::after {
+        content: "";
+        display: block;
+        position: absolute;
+        border: 4px solid goldenrod;
+        opacity: 1;
+        border-radius: 50%;
+        animation: loading-ripple 1.5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+      }
+
+      .loading-ripple::after {
+        animation-delay: -0.5s;
+      }
+
+      @keyframes loading-ripple {
+        0% {
+          top: 36px;
+          left: 36px;
+          width: 0;
+          height: 0;
+          opacity: 1;
+        }
+        100% {
+          top: 0px;
+          left: 0px;
+          width: 72px;
+          height: 72px;
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loading-wrap">
+      <div class="loading-ripple"></div>
+      <div>
+        <a href="https://loading.io/css/">Resource: loading.io</a>
+      </div>
+    </div>
+  </body>
+</html>
