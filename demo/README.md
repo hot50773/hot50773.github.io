@@ -28,3 +28,5 @@
 
 [request-animation-frame - print output](./request-animation-frame/print-output.html)
 
+[js-animate-on-mousemove](./animate-on-mousemove)
+
