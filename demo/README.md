@@ -30,3 +30,7 @@
 
 [js-animate-on-mousemove](./animate-on-mousemove)
 
+[canvas-syntax - create-linear-gradient](./canvas-syntax/create-linear-gradient.html)
+
+[canvas-animation - waves](./canvas-waves)
+
