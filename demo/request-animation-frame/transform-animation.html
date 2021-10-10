@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #progress {
+        width: 10px;
+        height: 10px;
+        background: red;
+      }
+
+      #counter {
+        word-break: break-all;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="progress"></div>
+    <div id="counter"></div>
+    <div id="log"></div>
+    <script>
+      var start = null;
+      var startTimeStamp = null
+      var element = document.getElementById("progress");
+      var counter = document.getElementById("counter")
+      var log = document.getElementById("log")
+      var timestampLog = []
+
+      function step(timestamp) {
+        if (log.innerText) {
+          log.innerText = log.innerText + ', ' + timestamp
+        } else {
+          log.innerText = timestamp
+        }
+
+        if (!startTimeStamp) startTimeStamp = Date.now()
+        if (!start) start = timestamp; // 紀錄開始時間
+
+        var progress = timestamp - start; // 紀錄目前經歷的時間
+
+        element.style.transform = "translateX(" + Math.min(progress / 10, 200) + "px)"; // 如果經歷時間小於 2000，平移 (progress/10) px，如果經歷時間達到 2000 秒，平移 200px
+
+        if (progress < 2000) {
+          var returnValue = window.requestAnimationFrame(step);
+          counter.innerHTML = returnValue
+        } else {
+          console.log('開始時間：' + startTimeStamp, '結束時間：' + Date.now(), '間隔約' + (Date.now() - startTimeStamp) + '毫秒')
+        }
+      }
+
+      window.requestAnimationFrame(step);
+
+
+      function getReqCallback() {
+        var count = 0;
+        var start = null;
+        var lastTimestamp = null;
+        var delta = 0;
+        return function req(timestamp) {
+          if (start === null ) {
+            start = timestamp;
+            lastTimestamp = timestamp;
+          }
+          count++;
+          delta = timestamp - lastTimestamp;
+          console.log(delta + 'ms');
+          lastTimestamp = timestamp;
+          if (count < 100) {
+            requestAnimationFrame(req);
+          }
+        }
+      }
+
+      // requestAnimationFrame(getReqCallback())
+    </script>
+  </body>
+</html>

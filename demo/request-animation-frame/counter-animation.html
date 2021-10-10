@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div style="display: flex">
+      <div style="width: 30%">
+        <h3>Counter1</h3>
+        <h1 id="counter1"></h1>
+        <h3>Counter2</h3>
+        <h1 id="counter2"></h1>
+      </div>
+      <div style="width: 70%">
+        <h1>程式說明</h1>
+        <hr />
+        <h2>requestAnimationFrame(callback)</h2>
+        瀏覽器內建
+        API，專門用來請求動畫，可在瀏覽器下一次重新渲染顯示之前，執行指定的程式，從而允許動畫在適當的幀率下運行。
+        <ul>
+          <li>
+            <a
+              href="https://developer.mozilla.org/zh-TW/docs/Web/API/window/requestAnimationFrame"
+              >MDN - API - requestAnimationFrame</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.ittew.cn/requestAnimationFrame%E5%AE%9E%E7%8E%B0%E5%8A%A8%E7%94%BB/"
+              >RequestAnimationFrame 優點和用法</a
+            >
+          </li>
+        </ul>
+        <h2>countAnimation()</h2>
+        <h4>
+          countAnimation 為執行動畫的主程式，會根據輸入值，執行Counter 動畫
+        </h4>
+        <h3>輸入值：</h3>
+        <ol>
+          <li>startNum 開始位置 (Integer)</li>
+          <li>endNum 結束位置 (Integer)</li>
+          <li>totalTime 總時間 (ms)</li>
+          <li>tarSelector 目標元素(one of : '#id', '.class', 'htmlTag')</li>
+        </ol>
+        <h3>步驟</h3>
+        <ol>
+          <li>
+            根據輸入值計算出：
+            <ul>
+              <li>
+                總距離 = 開始位置 - 結束位置
+                <small>(totalDistance = endNum - startNum)</small>
+              </li>
+              <li>
+                移動速度 = 總距離 / 總時間 (ms)
+                <small>(speed = totalDistance / totalTime)</small>
+              </li>
+            </ul>
+          </li>
+          <li>使用 requestAnimationFrame(step) 執行動畫</li>
+        </ol>
+        <hr />
+        <h2>step()</h2>
+        <h4>
+          step() 函數定義動畫每一幀要做的事，需使用 requestAnimationFrame 調用
+        </h4>
+        <h4>輸入值：</h4>
+        duration (動畫開始執行後，經過了多久)
+        <h4>每一幀要做的事為：</h4>
+        <ul>
+          <li>若動畫進行中（duration &lt; totalTime）</li>
+          <ol>
+            <li>計算目前移動距離 curDistance = time * speed</li>
+            <li>計算目前位置 = 開始位置 + 移動距離</li>
+            <li>將目前位置取整數，輸出至畫面</li>
+            <li>繼續執行下一幀：requestAnimationFrame(step)</li>
+          </ol>
+          <li>若動畫已結束：將結束位置輸出至畫面</li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      function countAnimation(startNum, endNum, totalTime, tarSelector) {
+        const targetEl = document.querySelector(tarSelector);
+
+        const totalDistance = endNum - startNum;
+        const speed = totalDistance / totalTime; // 速度 = 距離 / 時間
+
+        const startTimeStamp = Date.now();
+        console.log(tarSelector + " startTimeStamp: " + startTimeStamp);
+
+        function step(duration) {
+          const curDistance = duration * speed;
+
+          if (duration < totalTime) { // 動畫進行中
+            requestAnimationFrame(step);
+            targetEl.innerText = Math.trunc(startNum + curDistance);
+          } else { // 動畫已結束
+            targetEl.innerText = endNum;
+
+            const endTimeStamp = Date.now();
+            console.log("---");
+            console.log(tarSelector + " endTimeStamp: " + endTimeStamp);
+            console.log(
+              tarSelector +
+                " actualDuration: " +
+                (endTimeStamp - startTimeStamp)
+            );
+          }
+        }
+        requestAnimationFrame(step);
+      }
+
+      countAnimation(1, 100, 10000, "#counter1");
+      countAnimation(1, 50000, 10000, "#counter2");
+    </script>
+  </body>
+</html>

@@ -22,3 +22,9 @@
 
 [vue-todo-list (with v-template)](./vue-todo-list/with-v-template.html)
 
+[counter-animation (use request-animation-frame)](./request-animation-frame/counter-animation.html)
+
+[move-animation (use request-animation-frame)](./request-animation-frame/move-animation.html)
+
+[request-animation-frame - print output](./request-animation-frame/print-output.html)
+
