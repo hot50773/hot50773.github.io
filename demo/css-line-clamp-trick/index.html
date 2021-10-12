@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Line Clamp Trick with Pure CSS</title>
+    <style>
+      .text-block {
+        border: 4px solid lightslategrey;
+        border-radius: 1rem;
+        width: 250px;
+        overflow: hidden;
+        margin-bottom: 2rem;
+        font-weight: bold;
+        /* padding: 1rem; */
+      }
+
+      .text-block:nth-of-type(even) {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .clamp-exact-3-line {
+        --line-clamp: 3;
+        --work-break: "none";
+
+        display: -webkit-box;
+        -webkit-line-clamp: var(--line-clamp);
+        -webkit-box-orient: vertical;
+        word-break: var(--word-break); /*  optional */
+        overflow: hidden;
+      }
+
+      .fade-exact-3-line {
+        --line-height: 1.2em;
+        --line: 3;
+        position: relative;
+        line-height: var(--line-height);
+        height: calc(
+          var(--line-height) * var(--line)
+        ); /* exactly three lines */
+      }
+      .fade-exact-3-line::after {
+        content: "";
+        text-align: right;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 70%;
+        height: 1.2em;
+        background: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 1) 50%
+        );
+
+        /* background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 1) 50%
+        ); */
+      }
+
+      .trunc-exact-3-line {
+        --line-height: 1.2em;
+        --line: 3;
+        position: relative;
+        line-height: var(--line-height);
+        height: calc(
+          var(--line-height) * var(--line)
+        ); /* exactly three lines */
+      }
+
+      .trunc-exact-3-line::after {
+        content: "...";
+        text-align: left;
+        position: absolute;
+        bottom: 0.2em;
+        right: 0;
+        width: 1em;
+        height: 1em;
+        background: #fff;
+      }
+
+      .trunc-when-exceed-line {
+        --lh: 1.4rem;
+        --max-lines: 3;
+        position: relative;
+        max-height: calc(var(--lh) * var(--max-lines));
+        overflow: hidden;
+        /* padding-right: 1rem; space for ellipsis */
+        line-height: var(--lh);
+      }
+
+      .trunc-when-exceed-line::before {
+        position: absolute;
+        content: "...";
+        inset-block-end: 0; /* "bottom" */
+        inset-inline-end: 0; /* "right" */
+      }
+      .trunc-when-exceed-line::after {
+        content: "";
+        position: absolute;
+        inset-inline-end: 0; /* "right" */
+        width: 1rem;
+        height: 1rem;
+        background: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Line Clamp Trick with Pure CSS</h2>
+    <h4>
+      Reference:
+      <a href="https://css-tricks.com/line-clampin/"
+        >css-tricks - line-clamping</a
+      >
+    </h4>
+
+    <div class="text-block basic-ellipse">Ellipse Only One Line.</div>
+
+    <hr>
+    <div class="text-block clamp-exact-3-line">
+      Flexible Clamp 3 Lines. Lorem ipsum dolor, sit amet consectetur adipisicing
+      elit. Rem perferendis qui, harum libero vitae exercitationem, quam amet,
+      quibusdam iure necessitatibus fugit non accusamus odit! Vitae quaerat
+      minus aliquid delectus sapiente! Ellipse Only One Line.
+    </div>
+
+    <div class="text-block clamp-exact-3-line">
+      Flexible Clamp 3 Lines.(對照組)
+    </div>
+    <hr>
+    <div class="text-block fade-exact-3-line">
+      Clamp Exact 3 Lines And Fade, Don't need to use line-clamp prop. Lorem
+      ipsum dolor, sit amet consectetur adipisicing elit. Rem perferendis qui,
+      harum libero vitae exercitationem, quam amet, quibusdam iure
+      necessitatibus fugit non accusamus odit! Vitae quaerat minus aliquid
+      delectus sapiente! Ellipse Only One Line.
+    </div>
+
+    <div class="text-block fade-exact-3-line">
+      Clamp Exact 3 Lines And Fade(對照組)
+    </div>
+    <hr>
+    <div class="text-block trunc-when-exceed-line">
+      Trunc When Exceed 3 Lines And Concat "..." after it, Not a perfect solution. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem
+      perferendis qui, harum libero vitae exercitationem, quam amet, quibusdam
+      iure necessitatibus fugit non accusamus odit! Vitae quaerat minus aliquid
+      delectus sapiente! Ellipse Only One Line.
+    </div>
+
+    <div class="text-block trunc-when-exceed-line">
+      Trunc When Exceed 3 Lines And Concat "..." after (對照組)
+    </div>
+  </body>
+</html>

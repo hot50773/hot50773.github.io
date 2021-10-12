@@ -1,20 +1,26 @@
 [form-validate-strategy](./form-validate-strategy)
 
-
 [click-anywhere-except-one-element](./click-anywhere-except-one-element)
 
 [breakpoint-test](./breakpoint-test)
 
 [three-layer-menu-demo](./three-layer-menu-demo)
 
+---
+
 [css-custom-form-input-style](./css-custom-form-input)
 
 [css-btn-animation: btn hover move up](./css-btn-animation/btn-hover-move-up.html)
+
 [css-rwd-header (Flex)](./css-rwd-header/use-flex.html)
 
 [css-rwd-header (Float)](./css-rwd-header/index.html)
 
 [css-loading-animation/loading-ripple](./css-loading-animation/loading-ripple.html)
+
+[css-line-clamp-trick](./css-line-clamp-trick)
+
+---
 
 [vue_basic](./vue_basic/basic_syntax.html)
 
