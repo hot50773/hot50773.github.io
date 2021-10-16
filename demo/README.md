@@ -6,6 +6,8 @@
 
 [three-layer-menu-demo](./three-layer-menu-demo)
 
+[js-get-element-height](./js-get-element-height)
+
 ---
 
 [css-custom-form-input-style](./css-custom-form-input)
@@ -31,6 +33,8 @@
 [vue-todo-list](./vue-todo-list)
 
 [vue-todo-list (with v-template)](./vue-todo-list/with-v-template.html)
+
+---
 
 [counter-animation (use request-animation-frame)](./request-animation-frame/counter-animation.html)
 
