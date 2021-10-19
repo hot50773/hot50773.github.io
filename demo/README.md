@@ -14,6 +14,8 @@
 
 [css-btn-animation: btn hover move up](./css-btn-animation/btn-hover-move-up.html)
 
+[css-btn-animation: btn hover slide effect (collection)](./css-btn-animation/btn-hover-slide-bg.html)
+
 [css-rwd-header (Flex)](./css-rwd-header/use-flex.html)
 
 [css-rwd-header (Float)](./css-rwd-header/index.html)
