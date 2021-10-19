@@ -12,6 +12,8 @@
 
 [css-custom-form-input-style](./css-custom-form-input)
 
+[css-card-effect: grouping with hover scale (horizontal)](./css-card-animation/card-group-hover-scale.html)
+
 [css-btn-animation: btn hover move up](./css-btn-animation/btn-hover-move-up.html)
 
 [css-btn-animation: btn hover slide effect (collection)](./css-btn-animation/btn-hover-slide-bg.html)
